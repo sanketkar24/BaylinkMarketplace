@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import Navbar from './components/navigation/navbar'
 import Login from './login_signup/login.js';
 import Signup from "./login_signup/signup.js";
+import ShelfDescription from './shelf_description';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -17,7 +18,8 @@ export default function RootLayout({ children }) {
     //     {children}
     //     </body> */}
     // </html>
-    <Signup  check="Brand" />
+    // <Signup  check="Brand" />
+    <ShelfDescription/>
   );
 }
 {/* <Signup check="Brand" /> */}
