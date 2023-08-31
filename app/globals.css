@@ -16,6 +16,12 @@
   }
 }
 
+@font-face {
+  font-family: "General Sans-Regular";
+  src: url("../public/fonts/GeneralSans-Regular.ttf");
+}
+
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

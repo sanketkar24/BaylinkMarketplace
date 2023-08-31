@@ -2,7 +2,6 @@
     color: var(--colour-pallete-neutrals-n-900, #000);
 
 /* Title/32px/Semibold */
-font-family: General Sans;
 font-size: 32px;
 font-style: normal;
 font-weight: 600;
@@ -14,7 +13,6 @@ line-height: 40px; /* 125% */
     color: var(--colour-pallete-neutrals-n-900, #000);
 
 /* Body/20px/Regular */
-font-family: General Sans;
 font-size: 20px;
 font-style: normal;
 font-weight: 400;
@@ -39,7 +37,6 @@ background: var(--colour-pallete-neutrals-n-60, #B0B0B0);
     color: var(--colour-pallete-neutrals-n-900, #000);
 
 /* Title/24px/Medium */
-font-family: General Sans;
 font-size: 24px;
 font-style: normal;
 font-weight: 500;
@@ -51,7 +48,6 @@ line-height: 32px; /* 133.333% */
     color: var(--colour-pallete-neutrals-n-900, #000);
 
 /* Body/16px/Medium */
-font-family: General Sans;
 font-size: 16px;
 font-style: normal;
 font-weight: 500;
@@ -62,7 +58,6 @@ line-height: 24px; /* 150% */
     color: var(--colour-pallete-neutrals-n-900, #000);
 
 /* Body/16px/Medium */
-font-family: General Sans;
 font-size: 16px;
 font-style: normal;
 font-weight: 500;
@@ -90,4 +85,9 @@ background: var(--colour-pallete-secondary-1-s-50, #FEFDFD);
 
 /* Shadow-16 */
 box-shadow: 0px 6.400000095367432px 14.399999618530273px 0px rgba(0, 0, 0, 0.13), 0px 1.2000000476837158px 3.5999999046325684px 0px rgba(0, 0, 0, 0.11);
+}
+
+
+.big-image{
+    width: 100%;
 }

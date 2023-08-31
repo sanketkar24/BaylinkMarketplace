@@ -1,24 +1,21 @@
-
-import './index.css'
-import ListingComponent from '../components/shelf_description/listing_component';
-import Footer from '../Footer/Footer.js';
-
+import "./index.css";
+import ListingComponent from "../components/shelf_description/listing_component";
+import Footer from "../Footer/Footer.js";
+import Image from "next/image";
+import images_link from "../../public/assets/sample_shelf.png";
 
 export default function ShelfDescription({ children }) {
-  var images_link = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfyaoHCHNg599Yp2QF3p9AVBpBOnox8v8H0GCS3j05&s",
-  ];
   return (
-    <>
+    <div style={{ fontFamily: "General Sans-Regular" }}>
       <div className="grid grid-cols-2 gap-4 mx-6 my-4">
         <div style={{ width: "100%" }}>
-          <img src={images_link[0]} alt="" style={{ width: "100%" }} />
+          <Image src={images_link} className="big-image" alt="" layout="responsive" />
         </div>
         <div className="grid grid-cols-2 gap-4" style={{ width: "100%" }}>
-          <img src={images_link[0]} alt="" style={{ width: "100%" }} />
-          <img src={images_link[0]} alt="" style={{ width: "100%" }} />
-          <img src={images_link[0]} alt="" style={{ width: "100%" }} />
-          <img src={images_link[0]} alt="" style={{ width: "100%" }} />
+          <Image src={images_link} alt="" layout="responsive" />
+          <Image src={images_link} alt="" layout="responsive" />
+          <Image src={images_link} alt="" layout="responsive" />
+          <Image src={images_link} alt="" layout="responsive" />
         </div>
       </div>
       <div className="flex mx-12">
@@ -91,7 +88,7 @@ export default function ShelfDescription({ children }) {
               <div className="heading-2 ">₹ 2400 per month</div>
               <div className="heading-2 mt-6">Dates</div>
             </div>
-
+{/* Date picker */}
             <div className="flex items-center mt-4">
               <div className="mr-2 heading-2">Start:</div>
               <input
@@ -123,20 +120,20 @@ export default function ShelfDescription({ children }) {
             <div className="flex justify-between ">
               <div className="heading-2 mt-6">
                 <div>Your Price</div>
-                <div>
+                <div >
                   <input
                     type="text"
-                    className="border border-gray-300 rounded-md px-3 py-2  mt-4"
+                    className="border border-gray-300 rounded-md px-3 py-2  mt-4 w-1/2"
                     placeholder="₹    2000/month"
                   />
                 </div>
               </div>
-              <div className="heading-2 mt-6">
+              <div className="heading-2 mt-6 w-1/2">
                 <div>Commission</div>
                 <div>
                   <input
                     type="text"
-                    className="border border-gray-300 rounded-md px-3 py-2  mt-4"
+                    className="border border-gray-300 rounded-md px-3 py-2  mt-4 w-1/2"
                     placeholder="10%"
                   />
                 </div>
@@ -170,6 +167,6 @@ export default function ShelfDescription({ children }) {
         <ListingComponent />
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
