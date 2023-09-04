@@ -11,12 +11,12 @@ const Navbar = () => {
                 <Image src={navbarLogo} alt="navbar logo" height={50} />
             </div>
             <div className=" items-center hidden gap-10 tablet:flex">
-                <Link className="hover:text-sky-500 hover:underline-offset-8 hover:underline " href="/">Home</Link>
-                <Link className="hover:text-sky-500 hover:underline-offset-8 hover:underline " href="/">Listing</Link>
-                <Link className="hover:text-sky-500 hover:underline-offset-8 hover:underline " href="/about">List Your Shelf</Link>
-                <Link className="hover:text-sky-500 hover:underline-offset-8 hover:underline " href="/contact">About Us</Link>
-                <Link className="hover:text-sky-500 hover:underline-offset-8 hover:underline " href="/contact">Sign Up</Link>
-                <Button type="primary" className="bg-sky-500 text-base">Log In</Button>
+                <Link className="hover:text-[#22B2E6] hover:underline-offset-8 hover:underline " href="/">Home</Link>
+                <Link className="hover:text-[#22B2E6] hover:underline-offset-8 hover:underline " href="/">Listing</Link>
+                <Link className="hover:text-[#22B2E6] hover:underline-offset-8 hover:underline " href="/about">List Your Shelf</Link>
+                <Link className="hover:text-[#22B2E6] hover:underline-offset-8 hover:underline " href="/contact">About Us</Link>
+                <Link className="hover:text-[#22B2E6] hover:underline-offset-8 hover:underline " href="/contact">Sign Up</Link>
+                <Button type="primary" className="bg-[#22B2E6] text-base">Log In</Button>
             </div>
         </div>
     </>
