@@ -1,10 +1,10 @@
 'use client'
 import React, { useState } from 'react';
-import ListingMenu from '../components/listingMenu';
-import CardDesign from '../components/Cards/index';
-import Map from '../components/map/index.js';
+import ListingMenu from '../../components/listingMenu';
+import CardDesign from '../../components/Cards/index';
+import Map from '../../components/map/index.js';
 import { Pagination } from 'antd';
-import data from '../sampledata.json';
+import data from '../../sampledata.json';
 import './page.css';
 
 function Listings() {

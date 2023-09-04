@@ -1,0 +1,38 @@
+#heading-2{
+
+    color:#0E87D1;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height:150% /* 27px */;
+  
+}
+
+.heading-1{
+
+    color: #000;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height:125% /* 27px */;
+    margin-top: "20px";
+}
+
+.input-heading{
+
+    color:#0F0F10;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height:150% /* 27px */;
+}
+
+.button-blue{
+    border-radius: 5px;
+    background:  #22B2E6;
+    box-shadow:  0px 2px 0px 0px rgba(0, 0, 0, 0.04);
+}
+
+.blue-color{
+    color: blue;
+}

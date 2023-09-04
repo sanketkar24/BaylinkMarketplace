@@ -2,7 +2,7 @@
     background-color: #FFFFFF;
 }
 .listingMenu{
-    padding-top: 6.5rem;
+    padding-top: 4.5rem;
     padding-bottom: 0.5rem;
     width: 100%;
     justify-content: space-between;
@@ -55,10 +55,10 @@
     width: 80rem;
     height: fit-content;
     position: sticky;
-    top: 9rem;
+    top: 7rem;
 }
 .listingSection{
-    padding-top: 9rem;
+    padding-top: 7rem;
     padding-bottom: 5rem;
     display: flex;
     flex-direction: row;
