@@ -1,0 +1,16 @@
+.CoverPage{
+    display: flex;
+    height: 100vh;
+    padding-top: 6rem;
+}
+.CoverPageText{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+.CoverPageText>h1{
+    font-family: 'GeneralSans-Regular';
+    font-size: 3rem;
+}

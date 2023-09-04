@@ -1,0 +1,65 @@
+.listingPage{
+    background-color: #FFFFFF;
+}
+.listingMenu{
+    padding-top: 6.5rem;
+    padding-bottom: 0.5rem;
+    width: 100%;
+    justify-content: space-between;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    background-color: #FFFFFF;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+.buttonsDiv{
+    width: 25vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.Right{
+    width: 28vw;
+}
+.sortByButtonDiv{
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    align-items: center;
+}
+.sortButton{
+    display: flex;
+    width: 12vw;
+    justify-content: space-between;
+    align-items: center;
+}
+.listingMain{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    align-items: center;
+}
+.cardsDiv{
+    justify-content: center;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    height: fit-content;
+    flex-direction: row;
+}
+.mapDiv{
+    width: 80rem;
+    height: fit-content;
+    position: sticky;
+    top: 9rem;
+}
+.listingSection{
+    padding-top: 9rem;
+    padding-bottom: 5rem;
+    display: flex;
+    flex-direction: row;
+} 
