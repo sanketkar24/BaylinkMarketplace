@@ -1,16 +1,16 @@
 // create an signup page
 "use client";
 import React from "react";
-import Logo from "../../images/logo_white.png";
-import SideImage from "../../images/login_img.png";
-import Brand_side_img from "../../images/brand_side_img.png";
-import BlueLogo from "../../images/logo_blue.png";
+import Logo from "../../../images/logo_white.png";
+import SideImage from "../../../images/login_img.png";
+import Brand_side_img from "../../../images/brand_side_img.png";
+import BlueLogo from "../../../images/logo_blue.png";
 import Image from "next/image";
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { SiFacebook } from "react-icons/si";
-import "./signup.css"
-
+import "./page.css"
+import Link from "next/link";
 
 const Signup = (props) => {
   const [formData, setFormData] = useState({
@@ -33,11 +33,14 @@ const Signup = (props) => {
 
   return (
     <div
-      className="flex justify-center items-center h-screen w-screen"
-      style={{ fontFamily: "General Sans" }}
+      className="flex justify-center items-center w-screen"
+      style={{
+        height: "fit-content",
+      }
+      }
     >
       <div className="flex w-full h-full  bg-white">
-        <div className="sm:hidden md:block flex-1 relative h-screen">
+        <div className="hidden tablet:block flex-1 relative h-auto">
           <div className="relative h-full">
             <Image
               src={props.check == "Brand" ? Brand_side_img : SideImage}
@@ -56,7 +59,7 @@ const Signup = (props) => {
                 style={{
                   color:
                     "var(--colour-pallete-secondary-1-s-100, var(--colour-pallete-secondary-1-s-100, #F6F6F6))",
-                  fontFamily: "General Sans",
+                  fontFamily: "General Sans Regular",
                   fontSize: "40px",
                   fontStyle: "normal",
                   fontWeight: 600,
@@ -71,7 +74,7 @@ const Signup = (props) => {
                     style={{
                       color:
                         "var(--colour-pallete-secondary-1-s-100, var(--colour-pallete-secondary-1-s-100, #F6F6F6))",
-                      fontFamily: "General Sans",
+                      fontFamily: "General Sans Regular",
                       fontSize: "40px",
                       fontStyle: "normal",
                       fontWeight: 600,
@@ -85,7 +88,7 @@ const Signup = (props) => {
                     style={{
                       color:
                         "var(--colour-pallete-secondary-1-s-100, var(--colour-pallete-secondary-1-s-100, #F6F6F6))",
-                      fontFamily: "General Sans",
+                      fontFamily: "General Sans Regular",
                       fontSize: "40px",
                       fontStyle: "normal",
                       fontWeight: 600,
@@ -99,7 +102,7 @@ const Signup = (props) => {
                   style={{
                     color:
                       "var(--colour-pallete-primary-p-300, var(--colour-pallete-primary-p-300, #22B2E6))",
-                    fontFamily: "General Sans",
+                    fontFamily: "General Sans Regular",
                     fontSize: "40px",
                     fontStyle: "normal",
                     fontWeight: 600,
@@ -117,11 +120,11 @@ const Signup = (props) => {
             <div
               // className={`${generalSansBold.variable} ${generalSansRegular.variable} ${generalSansLight.variable}`}
               id="heading-2"
-              style={{ fontFamily: "General Sans" }}
+              style={{ fontFamily: "General Sans Regular" }}
             >
               REGISTER
             </div>
-            <div className="flex ">
+            <div className="laptop:flex ">
               <div className="heading-1">Welcome to&nbsp;</div>
               <div
                 style={{
@@ -220,11 +223,12 @@ const Signup = (props) => {
                 <div className="flex justify-center mt-4 text-gray-500 text-center font-GeneralSans text-sm font-normal leading-5">
                 <div>Already have an account?&nbsp;</div>
               </div>
-              <div
+              <Link
                 className="flex justify-center items-center mt-4 text-primary-p-500 font-GeneralSans font-medium text-sm blue-color"
+                href='/login'
               >
                 Login
-              </div>
+              </Link>
             </div>
           </div>
         </div>

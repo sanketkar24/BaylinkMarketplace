@@ -1,6 +1,6 @@
 import "./index.css";
-import ListingComponent from "../components/shelf_description/listing_component";
-import Footer from "../Footer/Footer.js";
+import ListingComponent from "../../components/shelf_description/listing_component";
+import Footer from "../../Footer/Footer.js";
 import Image from "next/image";
 import images_link from "../../public/assets/sample_shelf.png";
 
