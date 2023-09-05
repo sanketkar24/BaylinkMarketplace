@@ -1,15 +1,49 @@
+'use client'
 import "./index.css";
+import "../../(withHeaderAndFooter)/listings/page.css"
 import ListingComponent from "../../components/shelf_description/listing_component";
 import Footer from "../../Footer/Footer.js";
 import Image from "next/image";
-import images_link from "../../public/assets/sample_shelf.png";
+import images_link from "../../../public/assets/sample_shelf.png";
+import data from "../../sampledata.json";
+import React, { useState } from "react";
+import CardDesign from "../../components/Cards/index";
+import { Pagination } from "antd";
 
 export default function ShelfDescription({ children }) {
+  const apiData = data;
+
+
+   const [currentPage, setCurrentPage] = useState(1);
+   
+   const pageSize = 10; // Number of cards per page
+
+   
+
+   const handlePageChange = (page) => {
+     setCurrentPage(page);
+   };
+
+   const handleCardHover = (lat, long) => {
+     // Update latitude and longitude when hovering over a card
+     setLatitude(lat);
+     console.log(lat, long);
+     setLongitude(long);
+   };
+
+   const startIndex = (currentPage - 1) * pageSize;
+   const endIndex = startIndex + pageSize;
+   const visibleData = apiData.data.slice(startIndex, endIndex);
   return (
     <div style={{ fontFamily: "General Sans-Regular" }}>
       <div className="grid grid-cols-2 gap-4 mx-6 my-4">
         <div style={{ width: "100%" }}>
-          <Image src={images_link} className="big-image" alt="" layout="responsive" />
+          <Image
+            src={images_link}
+            className="big-image"
+            alt=""
+            layout="responsive"
+          />
         </div>
         <div className="grid grid-cols-2 gap-4" style={{ width: "100%" }}>
           <Image src={images_link} alt="" layout="responsive" />
@@ -88,7 +122,7 @@ export default function ShelfDescription({ children }) {
               <div className="heading-2 ">₹ 2400 per month</div>
               <div className="heading-2 mt-6">Dates</div>
             </div>
-{/* Date picker */}
+            {/* Date picker */}
             <div className="flex items-center mt-4">
               <div className="mr-2 heading-2">Start:</div>
               <input
@@ -120,7 +154,7 @@ export default function ShelfDescription({ children }) {
             <div className="flex justify-between ">
               <div className="heading-2 mt-6">
                 <div>Your Price</div>
-                <div >
+                <div>
                   <input
                     type="text"
                     className="border border-gray-300 rounded-md px-3 py-2  mt-4 w-1/2"
@@ -154,19 +188,26 @@ export default function ShelfDescription({ children }) {
           </div>
         </div>
       </div>
-      <div className="flex justify-between mx-8">
-        <ListingComponent />
-        <ListingComponent />
-        <ListingComponent />
-        <ListingComponent />
+      <div className="listingMain mt-10">
+        <div className="cardsDiv">
+          {visibleData.map((item, index) => (
+            <CardDesign
+              key={index}
+              {...item}
+              address={item.address}
+              onCardHover={handleCardHover} // Pass hover handler
+            />
+          ))}
+        </div>
+        <div className="pagination-container">
+          <Pagination
+            current={currentPage}
+            total={apiData.data.length}
+            pageSize={pageSize}
+            onChange={handlePageChange}
+          />
+        </div>
       </div>
-      <div className="flex justify-between mx-8">
-        <ListingComponent />
-        <ListingComponent />
-        <ListingComponent />
-        <ListingComponent />
-      </div>
-      <Footer />
     </div>
   );
 }
