@@ -6,51 +6,84 @@ import Footer from "../../Footer/Footer.js";
 import Image from "next/image";
 import images_link from "../../../public/assets/sample_shelf.png";
 import data from "../../sampledata.json";
+import ShelfDescription_Data from "../../shelfDescription.json";
 import React, { useState } from "react";
 import CardDesign from "../../components/Cards/index";
 import { Pagination } from "antd";
+import { SlideshowLightbox } from "lightbox.js-react";
+import "lightbox.js-react/dist/index.css";
 
 export default function ShelfDescription({ children }) {
   const apiData = data;
+  const shelf_description_data = ShelfDescription_Data;
 
+  const [currentPage, setCurrentPage] = useState(1);
 
-   const [currentPage, setCurrentPage] = useState(1);
-   
-   const pageSize = 10; // Number of cards per page
+  const pageSize = 10; // Number of cards per page
 
-   
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
 
-   const handlePageChange = (page) => {
-     setCurrentPage(page);
-   };
+  const handleCardHover = (lat, long) => {
+    // Update latitude and longitude when hovering over a card
+    setLatitude(lat);
+    console.log(lat, long);
+    setLongitude(long);
+  };
+  const img_link = [
+    "https://source.unsplash.com/pAKCx4y2H6Q/1400x1200",
+    "https://source.unsplash.com/pAKCx4y2H6Q/1400x1200",
+    "https://source.unsplash.com/AYS2sSAMyhc/1400x1200",
+    "https://source.unsplash.com/AYS2sSAMyhc/1400x1200",
+  ];
+  console.log(shelf_description_data.data[0].imageSrc);
+  const startIndex = (currentPage - 1) * pageSize;
+  const endIndex = startIndex + pageSize;
+  const visibleData = apiData.data.slice(startIndex, endIndex);
 
-   const handleCardHover = (lat, long) => {
-     // Update latitude and longitude when hovering over a card
-     setLatitude(lat);
-     console.log(lat, long);
-     setLongitude(long);
-   };
+  // When the user scrolls the page, execute myFunction
+  React.useEffect(() => {
+    window.onscroll = function () {
+      myFunction();
+    };
+  }, []);
 
-   const startIndex = (currentPage - 1) * pageSize;
-   const endIndex = startIndex + pageSize;
-   const visibleData = apiData.data.slice(startIndex, endIndex);
+  // Get the header
+  var header = document.getElementById("myHeader");
+
+  // Get the offset position of the navbar
+  var sticky = header?.offsetTop;
+
+  // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+  function myFunction() {
+    if (window.pageYOffset > sticky) {
+      header?.classList.add("sticky");
+    } else {
+      header?.classList.remove("sticky");
+    }
+  }
+
   return (
-    <div style={{ fontFamily: "General Sans-Regular" }}>
-      <div className="grid grid-cols-2 gap-4 mx-6 my-4">
-        <div style={{ width: "100%" }}>
-          <Image
-            src={images_link}
-            className="big-image"
-            alt=""
-            layout="responsive"
+    <div
+      style={{
+        fontFamily: "General Sans-Regular",
+        paddingTop: "4.5rem",
+        position: "relative",
+      }}
+    >
+      <div className="grid grid-cols-2 gap-4 mx-6 mb-4 ">
+        <SlideshowLightbox className="container grid grid-cols-1 gap-2 mx-auto">
+          <img
+            className="w-full rounded"
+            src="https://source.unsplash.com/pAKCx4y2H6Q/1400x1200"
           />
-        </div>
-        <div className="grid grid-cols-2 gap-4" style={{ width: "100%" }}>
-          <Image src={images_link} alt="" layout="responsive" />
-          <Image src={images_link} alt="" layout="responsive" />
-          <Image src={images_link} alt="" layout="responsive" />
-          <Image src={images_link} alt="" layout="responsive" />
-        </div>
+        </SlideshowLightbox>
+        <SlideshowLightbox className="container grid grid-cols-2 gap-2 mx-auto">
+          {img_link.map((item, index) => (
+            <img className="w-full rounded" src={item} key={index} />
+          ))}
+        </SlideshowLightbox>
       </div>
       <div className="flex mx-12">
         <div className="w-1/2">
@@ -115,7 +148,11 @@ export default function ShelfDescription({ children }) {
           <div className="hoizontal-rular"></div>
           <div className="heading-3 mt-4">Similar Spaces </div>
         </div>
-        <div className="w-1/2 flex justify-center">
+        <div
+          className="w-1/2 flex justify-center header"
+          id="myHeader"
+          style={{ position: "sticky", top: "0" }}
+        >
           <div className="border border-gray-300 rounded-md p-4 w-3/4 mb-8 accounting-box">
             <div className="heading-2">Price</div>
             <div className=" justify-between items-center mt-4">
@@ -188,7 +225,7 @@ export default function ShelfDescription({ children }) {
           </div>
         </div>
       </div>
-      <div className="listingMain mt-10">
+      <div className="listingMain my-10">
         <div className="cardsDiv">
           {visibleData.map((item, index) => (
             <CardDesign
@@ -211,3 +248,39 @@ export default function ShelfDescription({ children }) {
     </div>
   );
 }
+
+
+
+{/* <div className="grid grid-cols-2 gap-4 mx-6 my-4">
+  <SlideshowLightbox className="flex">
+    {img_link.map((item, index) => (
+      <img
+        className={`w-full rounded  ${index > 0 ? "hidden" : ""}`}
+        src={item}
+        key={index}
+      />
+    ))}
+  </SlideshowLightbox>
+
+  {img_link.length > 2 ? (
+    <SlideshowLightbox className="container grid grid-cols-2 gap-2 mx-auto">
+      {img_link.map((item, index) => (
+        <img
+          className={`w-full h-full rounded ${index > 1 ? "hidden" : ""}`}
+          src={item}
+          key={index}
+        />
+      ))}
+    </SlideshowLightbox>
+  ) : (
+    <SlideshowLightbox className=" ">
+      {img_link.map((item, index) => (
+        <img
+          className={`w-full h-full mb-4 rounded ${index > 1 ? "hidden" : ""}`}
+          src={item}
+          key={index}
+        />
+      ))}
+    </SlideshowLightbox>
+  )}
+</div>; */}
