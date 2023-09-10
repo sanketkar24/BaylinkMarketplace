@@ -6,92 +6,113 @@ import Footer from "../../Footer/Footer.js";
 import Image from "next/image";
 import images_link from "../../../public/assets/sample_shelf.png";
 import data from "../../sampledata.json";
-import ShelfDescription_Data from "../../shelfDescription.json";
-import React, { useState } from "react";
+import ShelfDescription_Data from "./shelfDescription.json";
+import React, { useState, useRef } from "react";
 import CardDesign from "../../components/Cards/index";
 import { Pagination } from "antd";
 import { SlideshowLightbox } from "lightbox.js-react";
 import "lightbox.js-react/dist/index.css";
+import { DatePicker, Space } from "antd";
+
+
+const { RangePicker } = DatePicker;
 
 export default function ShelfDescription({ children }) {
   const apiData = data;
-  const shelf_description_data = ShelfDescription_Data;
+  const shelf_description_data = ShelfDescription_Data.data[0];
 
-  const [currentPage, setCurrentPage] = useState(1);
+   const [currentPage, setCurrentPage] = useState(1);
+   const [size, setSize] = useState("large");
+   const [isOpen, setIsOpen] = useState(false);
+   
+   const pageSize = 12; // Number of cards per page
 
-  const pageSize = 10; // Number of cards per page
+   
 
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
+   const handlePageChange = (page) => {
+     setCurrentPage(page);
+   };
 
-  const handleCardHover = (lat, long) => {
-    // Update latitude and longitude when hovering over a card
-    setLatitude(lat);
-    console.log(lat, long);
-    setLongitude(long);
-  };
-  const img_link = [
-    "https://source.unsplash.com/pAKCx4y2H6Q/1400x1200",
-    "https://source.unsplash.com/pAKCx4y2H6Q/1400x1200",
-    "https://source.unsplash.com/AYS2sSAMyhc/1400x1200",
-    "https://source.unsplash.com/AYS2sSAMyhc/1400x1200",
-  ];
-  console.log(shelf_description_data.data[0].imageSrc);
-  const startIndex = (currentPage - 1) * pageSize;
-  const endIndex = startIndex + pageSize;
-  const visibleData = apiData.data.slice(startIndex, endIndex);
+   const handleCardHover = (lat, long) => {
+     // Update latitude and longitude when hovering over a card
+     setLatitude(lat);
+     console.log(lat, long);
+     setLongitude(long);
+   };
+   const img_link = shelf_description_data.imageSrc;
+    // for (let i = 0; i < shelf_description_data.data[0].imageSrc.length; i++) {
+    //   img_link.push(shelf_description_data.data[0].imageSrc);
+    // }
+  //  console.log(shelf_description_data.data[0].imageSrc);
+   const startIndex = (currentPage - 1) * pageSize;
+   const endIndex = startIndex + pageSize;
+   const visibleData = apiData.data.slice(startIndex, endIndex);
 
-  // When the user scrolls the page, execute myFunction
-  React.useEffect(() => {
-    window.onscroll = function () {
-      myFunction();
+
+   const imageRef = useRef(null);
+
+   const handleShowMoreClick = () => {
+     // Trigger a click event on one of the images (e.g., the first image)
+     
+     setIsOpen(true);
+   };
+
+    const handleClose = () => {
+      setIsOpen(false);
     };
-  }, []);
 
-  // Get the header
-  var header = document.getElementById("myHeader");
+const onChange = (date, dateString) => {
+  console.log(date, dateString);
+};
 
-  // Get the offset position of the navbar
-  var sticky = header?.offsetTop;
 
-  // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-  function myFunction() {
-    if (window.pageYOffset > sticky) {
-      header?.classList.add("sticky");
-    } else {
-      header?.classList.remove("sticky");
-    }
-  }
-
+   
   return (
-    <div
-      style={{
-        fontFamily: "General Sans-Regular",
-        paddingTop: "4.5rem",
-        position: "relative",
-      }}
-    >
-      <div className="grid grid-cols-2 gap-4 mx-6 mb-4 ">
-        <SlideshowLightbox className="container grid grid-cols-1 gap-2 mx-auto">
-          <img
-            className="w-full rounded"
-            src="https://source.unsplash.com/pAKCx4y2H6Q/1400x1200"
-          />
-        </SlideshowLightbox>
-        <SlideshowLightbox className="container grid grid-cols-2 gap-2 mx-auto">
+    <div style={{ fontFamily: "General Sans-Regular", paddingTop: "4.5rem" }}>
+      <div className={`grid tablet:grid-cols-2 grid-cols-1 gap-4 mx-6 mb-4 `}>
+        <SlideshowLightbox
+          onClose={handleClose}
+          open={isOpen}
+          className="container grid grid-cols-1 gap-2 mx-auto"
+        >
           {img_link.map((item, index) => (
-            <img className="w-full rounded" src={item} key={index} />
+            <img
+              ref={index === 0 ? imageRef : null}
+              className={`w-full rounded ${index > 0 ? "hidden" : ""}`}
+              src={item}
+              key={index}
+            />
           ))}
         </SlideshowLightbox>
+        <div className="relative hidden tablet:block">
+          <SlideshowLightbox
+            className={`container relative grid grid-cols-2 gap-2 mx-auto `}
+          >
+            {img_link.map((item, index) => (
+              <img
+                className={`w-full rounded ${
+                  index === 0 || index > 4 ? "hidden" : ""
+                }`}
+                src={item}
+                key={index}
+              />
+            ))}
+          </SlideshowLightbox>
+          <button
+            className="absolute bottom-10 right-4 bg-blue-500 text-white px-4 py-2 rounded"
+            onClick={handleShowMoreClick}
+          >
+            Show More
+          </button>
+        </div>
       </div>
-      <div className="flex mx-12">
-        <div className="w-1/2">
+      <div className="laptop:flex mx-12">
+        <div className="laptop:w-1/2">
           <div className="flex justify-between">
             <div>
-              <div className="heading-1">Biffco Entriprises</div>
+              <div className="heading-1">{shelf_description_data.title}</div>
               <div className="heading-2">
-                3891 Ranchview Dr. Richardson, California 62639
+                {shelf_description_data.description}
               </div>
             </div>
 
@@ -101,30 +122,29 @@ export default function ShelfDescription({ children }) {
           <div className="heading-3 mt-4">Information</div>
           <div className="flex w-2/4 justify-between my-2">
             <div className="text-bold">Space Type:</div>
-            <div className="text">Text</div>
+            <div className="text">{shelf_description_data.spaceType}</div>
           </div>
           <div className="flex w-2/4 justify-between my-2">
             <div className="text-bold">Footfall:</div>
-            <div className="text">Text</div>
+            <div className="text">{shelf_description_data.footfall}</div>
           </div>
           <div className="flex w-2/4 justify-between my-2">
             <div className="text-bold">Store Size:</div>
-            <div className="text">Text</div>
+            <div className="text">{shelf_description_data.storeSize}</div>
           </div>
           <div className="flex w-2/4 justify-between my-2">
             <div className="text-bold">Category:</div>
-            <div className="text">Text</div>
+            <div className="text">{shelf_description_data.category}</div>
           </div>
           <div className="flex w-2/4 justify-between my-2">
             <div className="text-bold">Payment collection Period:</div>
-            <div className="text">Text</div>
+            <div className="text">
+              {shelf_description_data.paymentCollectionPeriod}
+            </div>
           </div>
           <div className="hoizontal-rular"></div>
           <div className="heading-3 mt-4">Location</div>
-          <div className="text mt-4">
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id es
-          </div>
+          <div className="text mt-4">{shelf_description_data.location}</div>
           <div className="text">
             Have more questions about this space or area? Just ask!
           </div>
@@ -145,49 +165,16 @@ export default function ShelfDescription({ children }) {
             posuere magna nibh. Quis leo enim auctor risus et malesuada urna.
             Varius donec massa dignissim platea nisi.
           </div>
-          <div className="hoizontal-rular"></div>
-          <div className="heading-3 mt-4">Similar Spaces </div>
         </div>
-        <div
-          className="w-1/2 flex justify-center header"
-          id="myHeader"
-          style={{ position: "sticky", top: "0" }}
-        >
-          <div className="border border-gray-300 rounded-md p-4 w-3/4 mb-8 accounting-box">
+        <div className="laptop:w-1/2  flex justify-center ">
+          <div className="border border-gray-300 rounded-md p-4 w-3/4 mb-8 accounting-box sticky1">
             <div className="heading-2">Price</div>
             <div className=" justify-between items-center mt-4">
               <div className="heading-2 ">₹ 2400 per month</div>
               <div className="heading-2 mt-6">Dates</div>
             </div>
             {/* Date picker */}
-            <div className="flex items-center mt-4">
-              <div className="mr-2 heading-2">Start:</div>
-              <input
-                type="date"
-                className="border border-gray-300 rounded-md px-3 py-2 w-40"
-              />
-              <div className="ml-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 12h14M12 5l7 7-7 7"
-                  />
-                </svg>
-              </div>
-              <div className="ml-2 mr-2 heading-2">End:</div>
-              <input
-                type="date"
-                className="border border-gray-300 rounded-md px-3 py-2 w-40"
-              />
-            </div>
+            <RangePicker onChange={onChange} size={size} />
             <div className="flex justify-between ">
               <div className="heading-2 mt-6">
                 <div>Your Price</div>
@@ -226,6 +213,8 @@ export default function ShelfDescription({ children }) {
         </div>
       </div>
       <div className="listingMain my-10">
+        <div className="hoizontal-rular w-screen"></div>
+        <div className="heading-3 mt-4 mx-10">Similar Spaces </div>
         <div className="cardsDiv">
           {visibleData.map((item, index) => (
             <CardDesign

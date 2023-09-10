@@ -12,7 +12,7 @@
     "@ant-design/icons": "^5.2.5",
     "@reduxjs/toolkit": "^1.9.5",
     "ant-design": "^1.0.0",
-    "antd": "^5.8.4",
+    "antd": "^5.9.0",
     "autoprefixer": "10.4.15",
     "axios": "^1.5.0",
     "lightbox.js-react": "^0.8.2",
