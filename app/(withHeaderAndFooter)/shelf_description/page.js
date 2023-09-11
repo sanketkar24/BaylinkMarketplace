@@ -5,6 +5,7 @@ import ListingComponent from "../../components/shelf_description/listing_compone
 import Footer from "../../Footer/Footer.js";
 import Image from "next/image";
 import images_link from "../../../public/assets/sample_shelf.png";
+import blockImage from "../../../images/view-grid.png"
 import data from "../../sampledata.json";
 import ShelfDescription_Data from "./shelfDescription.json";
 import React, { useState, useRef } from "react";
@@ -68,7 +69,7 @@ const onChange = (date, dateString) => {
 
    
   return (
-    <div style={{ fontFamily: "General Sans-Regular", paddingTop: "4.5rem" }}>
+    <div style={{ fontFamily: "General Sans Regular", paddingTop: "4.5rem" }}>
       <div className={`grid tablet:grid-cols-2 grid-cols-1 gap-4 mx-6 mb-4 `}>
         <SlideshowLightbox
           onClose={handleClose}
@@ -98,19 +99,24 @@ const onChange = (date, dateString) => {
               />
             ))}
           </SlideshowLightbox>
-          <button
-            className="absolute bottom-10 right-4 bg-blue-500 text-white px-4 py-2 rounded"
+          <div
+            className="absolute bottom-10 right-4 bg-white text-black px-4 py-2 rounded"
             onClick={handleShowMoreClick}
           >
-            Show More
-          </button>
+            <div className="flex">
+              <Image src={blockImage} width="20px" height="20px" />
+              <div className="ml-2">Show All Photos</div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="laptop:flex mx-12">
         <div className="laptop:w-1/2">
           <div className="flex justify-between">
             <div>
-              <div className="heading-1">{shelf_description_data.title}</div>
+              <div className="heading-1 w-96">
+                {shelf_description_data.title}
+              </div>
               <div className="heading-2">
                 {shelf_description_data.description}
               </div>
@@ -119,27 +125,51 @@ const onChange = (date, dateString) => {
             <div className="profile-image mr-4 mb-4"></div>
           </div>
           <div className="hoizontal-rular"></div>
-          <div className="heading-3 mt-4">Information</div>
-          <div className="flex w-2/4 justify-between my-2">
-            <div className="text-bold">Space Type:</div>
-            <div className="text">{shelf_description_data.spaceType}</div>
-          </div>
-          <div className="flex w-2/4 justify-between my-2">
-            <div className="text-bold">Footfall:</div>
-            <div className="text">{shelf_description_data.footfall}</div>
-          </div>
-          <div className="flex w-2/4 justify-between my-2">
-            <div className="text-bold">Store Size:</div>
-            <div className="text">{shelf_description_data.storeSize}</div>
-          </div>
-          <div className="flex w-2/4 justify-between my-2">
-            <div className="text-bold">Category:</div>
-            <div className="text">{shelf_description_data.category}</div>
-          </div>
-          <div className="flex w-2/4 justify-between my-2">
-            <div className="text-bold">Payment collection Period:</div>
-            <div className="text">
-              {shelf_description_data.paymentCollectionPeriod}
+          <div class="flex-col justify-start items-start gap-8 inline-flex mb-4">
+            <div class="self-stretch text-black text-2xl font-medium leading-loose">
+              Information
+            </div>
+            <div class="self-stretch  flex-col justify-start items-start gap-4 flex">
+              <div class="self-stretch justify-between items-start gap-[72px] inline-flex">
+                <div class="text-black text-base font-medium leading-normal">
+                  Space Type:
+                </div>
+                <div class="text-black text-base font-normal leading-normal">
+                  Text
+                </div>
+              </div>
+              <div class="self-stretch justify-between items-start gap-[111px] inline-flex">
+                <div class="text-black text-base font-medium leading-normal">
+                  Footfall:
+                </div>
+                <div class="text-black text-base font-normal leading-normal">
+                  Text
+                </div>
+              </div>
+              <div class="self-stretch justify-between items-start gap-[91px] inline-flex">
+                <div class="text-black text-base font-medium leading-normal">
+                  Store Size:
+                </div>
+                <div class="text-black text-base font-normal leading-normal">
+                  Text
+                </div>
+              </div>
+              <div class="self-stretch justify-between items-start gap-[91px] inline-flex">
+                <div class="text-black text-base font-medium leading-normal">
+                  Category:
+                </div>
+                <div class="text-black text-base font-normal leading-normal">
+                  Text
+                </div>
+              </div>
+              <div class="self-stretch justify-between items-start gap-[91px] inline-flex">
+                <div class="grow shrink basis-0 text-black text-base font-medium leading-normal">
+                  Payment collection Period:
+                </div>
+                <div class="text-black text-base font-normal leading-normal">
+                  Text
+                </div>
+              </div>
             </div>
           </div>
           <div className="hoizontal-rular"></div>
@@ -148,7 +178,7 @@ const onChange = (date, dateString) => {
           <div className="text">
             Have more questions about this space or area? Just ask!
           </div>
-          <div className="button my-4">
+          <div className="button my-4 flex">
             <button>Contact the Owner</button>
           </div>
           <div className=" flex">
