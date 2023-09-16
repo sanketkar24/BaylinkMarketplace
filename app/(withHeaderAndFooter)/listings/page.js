@@ -44,6 +44,7 @@ function Listings() {
                     <div className='cardsDiv'>
                         {visibleData.map((item, index) => (
                             <CardDesign
+                                
                                 key={index}
                                 {...item}
                                 address={item.address}
