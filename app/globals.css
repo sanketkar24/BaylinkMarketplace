@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@font-face {
+  font-family: 'General Sans Bold';
+  font-weight: bold;
+  src: url('./fonts/GeneralSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'General Sans Regular';
+  font-weight: 800;
+  src: url('./fonts/GeneralSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'General Sans Light';
+  font-weight: lighter;
+  src: url('./fonts/GeneralSans-Light.ttf') format('truetype');
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.heading{
+    font-family: 'General Sans Regular';
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 2.5rem;
+}

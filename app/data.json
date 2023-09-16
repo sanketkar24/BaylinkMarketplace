@@ -1,0 +1,7 @@
+{
+  "dataVal": [
+    { "id": 1, "category": "Category 1", "location": "Location 1" },
+    { "id": 2, "category": "Category 2", "location": "Location 2"},
+    { "id": 3, "category": "Category 3", "location": "Location 3" }
+  ]
+}
