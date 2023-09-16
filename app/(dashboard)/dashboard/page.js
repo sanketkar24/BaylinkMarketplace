@@ -1,25 +1,24 @@
 "use client"
 import React from 'react';
-import { Layout, Space } from 'antd';
-import Image from 'next/image';
-import logo_blue from '../../../images/logo_blue.png';
-import BrandCard from '../../components/dashboard/brandCard/index.js';
-import NavMenu from '@/app/components/dashboard/navigationMenu';
+import { Layout } from 'antd';
+import SummaryCard from '@/app/components/dashboard/summaryCard';
 const { Header, Footer, Sider, Content } = Layout;
 const headerStyle = {
+    display: 'flex',
+    borderBottom: '1px solid #e8e8e8',
     textAlign: 'center',
-    color: '#fff',
-    height: '10vh',
+    height: 'fit-content',
     paddingInline: 50,
     lineHeight: '64px',
-    backgroundColor: '#7dbcea',
+    backgroundColor: '#FFFFFF',
 };
 const contentStyle = {
-    textAlign: 'center',
+    display: 'flex',
+    justifyContent: 'center',
+    // alignVertical: 'start',
     minHeight: 120,
     lineHeight: '120px',
-    color: '#fff',
-    backgroundColor: '#108ee9',
+    backgroundColor: '#FFFFFF',
     height: '90vh',
 };
 const siderStyle = {
@@ -28,26 +27,9 @@ const siderStyle = {
     color: '#ffff',
     backgroundColor: '#ffffff',
     height: '100vh',
-};
-const footerStyle = {
-    textAlign: 'center',
-    color: '#fff',
-    backgroundColor: '#7dbcea',
+    borderRight: '1px solid #e8e8e8',
 };
 const App = () => (
-    <Layout>
-        <Sider width={400} style={siderStyle} className='pt-6'>
-            <Space align='center' direction='vertical'>
-                <Image src={logo_blue} alt="navbar logo" height={50} className='pb-6'/>
-                <BrandCard />
-                <NavMenu />
-            </Space>
-        </Sider>
-        <Layout>
-            <Header style={headerStyle}>Header</Header>
-            <Content style={contentStyle}>Content</Content>
-            {/* <Footer style={footerStyle}>Footer</Footer> */}
-        </Layout>
-    </Layout>
+    <SummaryCard />
 );
 export default App;

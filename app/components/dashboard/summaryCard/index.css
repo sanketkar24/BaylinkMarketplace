@@ -1,0 +1,8 @@
+.summaryCard{
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    width: 80%;
+    height: fit-content;
+    align-self: center;
+}

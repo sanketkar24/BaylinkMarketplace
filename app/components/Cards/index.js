@@ -1,6 +1,8 @@
-'use client'
+// CardDesign.js
+
 import React, { useState } from 'react';
 import { Avatar, Card } from 'antd';
+import { useRouter } from 'next/navigation'; // Import the useRouter hook
 import './index.css';
 
 function CardDesign(props) {
@@ -10,16 +12,17 @@ function CardDesign(props) {
     const { imageSrc, price, shopName, location, area, footfall, address, onCardHover } = props;
 
     const [isHovered, setIsHovered] = useState(false);
+    const router = useRouter(); // Initialize the router
 
     const handleMouseEnter = () => {
         setIsHovered(true);
         onCardHover(address.lat, address.long); // Pass latitude and longitude on hover
     };
 
-    // const handleMouseLeave = () => {
-    //     setIsHovered(false);
-    //     onCardHover(null, null); // Reset latitude and longitude on leave
-    // };
+    const handleDoubleClick = () => {
+        // Navigate to another page on double click
+        router.push('/dashboard'); // Replace with the desired page path
+    };
 
     return (
         <Card
@@ -29,7 +32,7 @@ function CardDesign(props) {
             }}
             cover={<img alt="example" src={imageSrc} />}
             onClick={handleMouseEnter}
-            // onMouseLeave={handleMouseLeave}
+            onDoubleClick={handleDoubleClick} // Handle double click
         >
             <div className='cardHeading'>
                 <h1>{shopName}</h1>
