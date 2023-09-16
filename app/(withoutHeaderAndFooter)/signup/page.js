@@ -40,7 +40,7 @@ const Signup = (props) => {
       }
     >
       <div className="flex w-full h-full  bg-white">
-        <div className="hidden tablet:block flex-1 relative h-screen">
+        <div className="hidden tablet:block flex-1 relative h-auto">
           <div className="relative h-full">
             <Image
               src={props.check == "Brand" ? Brand_side_img : SideImage}
