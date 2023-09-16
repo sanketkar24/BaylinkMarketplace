@@ -21,7 +21,7 @@ function CardDesign(props) {
 
     const handleDoubleClick = () => {
         // Navigate to another page on double click
-        router.push('/dashboard'); // Replace with the desired page path
+        router.push('/shelf_description'); // Replace with the desired page path
     };
 
     return (
