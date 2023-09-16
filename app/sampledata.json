@@ -167,6 +167,29 @@
                 "lat": "13.3525",
                 "long": "74.7928"
             }
+        },
+        {
+          "imageSrc": "https://hd.wallpaperswide.com/thumbs/anime_food_store-t2.jpg",
+          "price": "₹5000",
+          "shopName": "Bablu Store",
+          "location": "Eshwar Nagar",
+          "area": "Manipal",
+          "footfall": "1000",
+          "address": {
+            "lat": "28.612894",
+            "long": "77.229446"
+          }
+        },{
+          "imageSrc": "https://hd.wallpaperswide.com/thumbs/anime_food_store-t2.jpg",
+          "price": "₹5000",
+          "shopName": "Bablu Store",
+          "location": "Eshwar Nagar",
+          "area": "Manipal",
+          "footfall": "1000",
+          "address": {
+            "lat": "28.612894",
+            "long": "77.229446"
+          }
         }
         
     ]
