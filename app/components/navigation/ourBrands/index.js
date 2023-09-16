@@ -1,11 +1,11 @@
 import React from 'react'
 import Marquee from "react-fast-marquee";
 import img1 from '../../../../images/paradyes_logo.webp';
-import img2 from '../../../../images/img2.jpeg';
-import img3 from '../../../../images/img3.jpeg';
-import img4 from '../../../../images/img4.jpeg';
-import img5 from '../../../../images/img5.jpeg';
-import img6 from '../../../../images/pepper_marquee.jpeg';
+// import img2 from '../../../../images/img2.jpeg';
+// import img3 from '../../../../images/img3.jpeg';
+// import img4 from '../../../../images/img4.jpeg';
+// import img5 from '../../../../images/img5.jpeg';
+// import img6 from '../../../../images/pepper_marquee.jpeg';
 import Image from 'next/image';
 function brands() {
   return (
