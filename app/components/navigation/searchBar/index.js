@@ -64,7 +64,7 @@ function SearchBar() {
 
       {/* Search Button */}
       <button
-        className="bg-sky-500 text-white tablet:px-4 tablet:py-2 text-sm py-2 px-2 tablet:text-base rounded-full hover:bg-blue-500 "
+        className="bg-[#22B2E6] text-white tablet:px-4 tablet:py-2 text-sm py-2 px-2 tablet:text-base rounded-full hover:bg-blue-500 "
         onClick={handleSearch}
       >
         Search
