@@ -15,7 +15,7 @@ function brands() {
     <div className='font-light tablet:text-base text-sm '>Discover the brands thriving through our services in the retail marketplace.</div>
     <div className='flex tablet:flex-row flex-col mt-8 mb-8 items-center text-center'>
     <div className="my-10">
-              <Marquee speed={"60"} pauseOnHover={true}>
+              <Marquee speed={"60"} pauseOnHover={true} className='align-middle'>
                 <Image src={img1} className='mx-10 w-2/3' alt="" preview={false} height={80} ></Image>
                 <Image src={img2} className='mx-10 w-2/3' alt="" preview={false} height={80} ></Image>
                 <Image src={img3} className='mx-10 w-2/3' alt="" preview={false} height={80} ></Image>
