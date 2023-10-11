@@ -3,9 +3,16 @@
     justify-content: space-between;
     /* font-family: 'General Sans Regular'; */
     font-weight: 600; 
+    color: #383839;
 }
 
 .cardDescription {
     font-family: 'General Sans Regular';
     font-weight: bold;
+    color: #383839;
+}
+
+.secondRow{
+    display: flex;
+    justify-content: space-between;
 }

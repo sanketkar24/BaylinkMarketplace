@@ -37,7 +37,7 @@ function Listings() {
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios(
-                'http://localhost:3001/getListing',
+                'https://baylinkmarketplaceserver.onrender.com/getListing',
             );
             console.log(result.data.data)
             // setData(result.data.data);
@@ -60,7 +60,6 @@ function Listings() {
                     <div className='cardsDiv'>
                         {visibleData.map((item, index) => (
                             <CardDesign
-                                
                                 key={index}
                                 {...item}
                                 address={item.address}

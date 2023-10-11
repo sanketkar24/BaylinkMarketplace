@@ -9,7 +9,7 @@ function CardDesign(props) {
     const cardWidth = 300; // Set your desired width here
     const cardHeight = (cardWidth * 9) / 16; // Calculate the height for a 16:9 aspect ratio
 
-    const { imageSrc, price, vendor_name, location, area, footfall, address, onCardHover } = props;
+    const { imageSrc, price, vendor_name, location, area, margin, footfall, address, onCardHover } = props;
 
     const [isHovered, setIsHovered] = useState(false);
     const router = useRouter(); // Initialize the router
@@ -36,12 +36,14 @@ function CardDesign(props) {
         >
             <div className='cardHeading'>
                 <h1>{vendor_name}</h1>
-                <h2>{price}</h2>
+                <h2>₹{price}</h2>
             </div>
             <div className='cardDescription'>
-                {area} ∙ {location}
-                <br />
-                {footfall}
+                <div className='secondRow'>
+                    {area} ∙ {location}
+                    <h2>Margin: {margin}%</h2>
+                </div>
+                Footfall: {footfall}/per day
             </div>
         </Card>
     );
