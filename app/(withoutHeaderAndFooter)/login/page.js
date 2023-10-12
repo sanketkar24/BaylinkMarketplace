@@ -8,17 +8,18 @@ import BlueLogo from "../../../images/logo_blue.png";
 import Image from "next/image";
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
-import {SiFacebook} from "react-icons/si";
+import { SiFacebook } from "react-icons/si";
 import './page.css'
 import Link from "next/link";
+import { message } from "antd";
+import Cookies from "js-cookie";
+
+const axios = require("axios");
 
 const Login = (props) => {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
     email: "",
     password: "",
-    confirmPassword: "",
   });
 
   const handleInputChange = (event) => {
@@ -28,7 +29,20 @@ const Login = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData);
+    console.log("Form submitted with data:", formData);
+    //post formData to backend using axios
+    axios.post("https://baylinkmarketplaceserver.onrender.com/login", formData)
+    .then((response) => {
+      //set jwt token in cookies
+      const token  = response.data.accessToken;
+      Cookies.set("jwtToken", token);
+
+      //send successful message
+      message.success("Logged in successfully")
+    })
+    .catch((error) => {
+      message.error("Invalid Credentials");
+    });
   };
 
   return (
@@ -83,14 +97,18 @@ const Login = (props) => {
             <div className="text-black font-bold text-4xl my-5">
               Welcome Back!
             </div>
+            <form onSubmit={handleSubmit}>
             <div className="mt-4">
               <div className="text-gray-700 font-normal text-base">
                 Email or mobile number
               </div>
               <input
                 type="text"
-                className="border border-gray-300 p-2 rounded-lg w-full mt-2"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
                 placeholder="Enter your Email or mobile number"
+                className="border border-gray-300 p-2 rounded-lg w-full mt-2"
               />
             </div>
             <div className="mt-4">
@@ -99,6 +117,9 @@ const Login = (props) => {
               </div>
               <input
                 type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleInputChange}
                 className="border border-gray-300 p-2 rounded-lg w-full mt-2"
                 placeholder="Enter your Password"
               />
@@ -113,11 +134,12 @@ const Login = (props) => {
             <div className="flex justify-center mt-4">
               <button
                 className="blue-background text-white p-2 rounded-lg w-full border-2 border-blue-300 hover:bg-blue-700 hover:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors duration-300"
-               
+                type="submit"
               >
                 Sign In
               </button>
             </div>
+            </form>
             <div
               className="flex justify-center mt-4"
               style={{

@@ -9,7 +9,8 @@ function CardDesign(props) {
     const cardWidth = 300; // Set your desired width here
     const cardHeight = (cardWidth * 9) / 16; // Calculate the height for a 16:9 aspect ratio
 
-    const { imageSrc, price, vendor_name, location, area, margin, footfall, address, onCardHover } = props;
+    console.log(props)
+    const { _id, imageSrc, price, vendor_name, location, area, margin, footfall, address, onCardHover } = props;
 
     const [isHovered, setIsHovered] = useState(false);
     const router = useRouter(); // Initialize the router
@@ -21,7 +22,7 @@ function CardDesign(props) {
 
     const handleDoubleClick = () => {
         // Navigate to another page on double click
-        router.push('/shelf_description'); // Replace with the desired page path
+        router.push(`/shelf_description/${_id}`); // Replace with the desired page path
     };
 
     return (
