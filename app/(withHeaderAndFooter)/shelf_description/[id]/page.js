@@ -96,7 +96,7 @@ export default function ShelfDescription({ children }) {
 
 
   return (
-    <div style={{ fontFamily: "General Sans Regular", paddingTop: "4.5rem" }}>
+    <div style={{ fontFamily: "General Sans Regular", paddingTop: "4.5rem", background: 'white'}}>
       {
         shelf_description_data ?
           <div className={`grid tablet:grid-cols-2 grid-cols-1 gap-4 mx-6 mb-4 `}>
