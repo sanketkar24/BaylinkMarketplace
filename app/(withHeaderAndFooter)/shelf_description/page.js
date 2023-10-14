@@ -69,7 +69,7 @@ const onChange = (date, dateString) => {
 
    
   return (
-    <div style={{ fontFamily: "General Sans Regular", paddingTop: "4.5rem" }}>
+    <div style={{ fontFamily: "General Sans Regular", paddingTop: "4.5rem", background: "#FEFDFD" }}>
       <div className={`grid tablet:grid-cols-2 grid-cols-1 gap-4 mx-6 mb-4 `}>
         <SlideshowLightbox
           onClose={handleClose}
