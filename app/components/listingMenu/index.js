@@ -11,7 +11,7 @@ function ListingMenu({onToggleChange}) {
     onToggleChange(checked);
   };
   return (
-      <div className='listingMenu'>
+      <div className='listingMenu text-black'>
         <div className='buttonsDiv w-[25%] max-w-[24rem] min-w-[8rem]'>
           <Button style={ buttonColor }>Price</Button>
           <Button style={ buttonColor } >Footfall</Button>
