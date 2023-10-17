@@ -27,7 +27,7 @@ export default function ShelfDescription({ children }) {
   const [visibleData, setVisibleData] = useState([]);
   const [apiData, setApiData] = useState([]);
 
-  const pageSize = 12; // Number of cards per page
+  const pageSize = 4; // Number of cards per page
   const params = useParams()
   useEffect(() => {
     console.log(params)
@@ -140,7 +140,7 @@ export default function ShelfDescription({ children }) {
             </div>
           </div>
           :
-          <div className={`grid tablet:grid-cols-2 grid-cols-1 gap-4 mx-6 mb-4 `}>
+          <div className={`grid tablet:grid-cols-2 grid-cols-1 gap-4 mx-6 mb-4 pt-1`}>
             <Spin size="large">
               <div className="content" />
             </Spin>
@@ -271,7 +271,7 @@ export default function ShelfDescription({ children }) {
           </div>
         </div>
       </div>
-      <div className="listingMain my-10">
+      <div className="listingMain py-10">
         <div className="hoizontal-rular w-screen"></div>
         <div className="heading-3 mt-4 mx-10">Similar Spaces </div>
         <div className="cardsDiv">
