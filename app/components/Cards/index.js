@@ -30,6 +30,7 @@ function CardDesign(props) {
             hoverable
             style={{
                 width: 300,
+                
             }}
             cover={<img alt="example" src={imageSrc[0]} />}
             onClick={handleMouseEnter}
