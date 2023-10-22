@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: calc(100vh - 14rem);
 }
 .tnc-Heading{
     font-family: 'General Sans Bold';

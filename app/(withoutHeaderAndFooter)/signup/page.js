@@ -39,7 +39,7 @@ const Signup = (props) => {
       }
       }
     >
-      <div className="flex w-full h-full  bg-white">
+      <div className="flex w-full h-screen  bg-white">
         <div className="hidden tablet:block flex-1 relative h-auto">
           <div className="relative h-full">
             <Image

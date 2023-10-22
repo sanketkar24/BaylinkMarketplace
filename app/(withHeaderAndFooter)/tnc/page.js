@@ -64,7 +64,7 @@ function tncPage() {
     };
 
     return (
-        <div className='tnc h-[75vh] bg-white'>
+        <div className='tnc bg-white'>
             <div className='tnc-content bg-yellow-50 h-[80%] '>
                 <div className='tnc-content-left'>
                     <div className='tnc-Heading text-center my-9'>
