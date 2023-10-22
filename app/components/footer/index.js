@@ -1,5 +1,7 @@
+"use client";
 import React from 'react'
 import './index.css'
+import Link from 'next/link';
 function Footer() {
   return (
     <div className='footer'>
@@ -22,7 +24,7 @@ function Footer() {
         <div className='footerTextSubheading'>
           About Us
           <br />
-          Terms and Conditions
+          <Link href={'/tnc'}>Terms and Conditions</Link>
           <br />
           Privacy Policy
           <br />

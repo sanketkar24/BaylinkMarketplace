@@ -1,0 +1,66 @@
+.tnc{
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.tnc-Heading{
+    font-family: 'General Sans Bold';
+    font-size: 2.5rem;
+}
+.tnc-content{
+    display: flex;
+    flex-direction: row;
+}
+.tnc-content-left{
+    width: 65vw;
+}
+.tncImage{
+    object-fit: cover;
+    height: 100%;
+}
+.tnc-para{
+    font-family: 'General Sans Regular';
+    font-size: 1.25rem;
+
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+.ant-modal-header{
+    text-align: center;
+}
+.ant-modal-title{
+    font-size: 3rem;
+}
+.modalContent{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #F6F6F6;
+    height: 40vh;
+    overflow: auto;
+    scrollbar-color: red #F6F6F6; 
+    scrollbar-width: thin;
+    scrollbar-color: #22B2E6 #22B2E6;
+}
+.modalContentTitle{
+    color: #22B2E6;
+    font-size: 1.25rem;
+}
+.modalContentBody{
+    font-size: 1rem;
+    padding-top: 2rem;
+}
+.modalContent::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+.modalContent::-webkit-scrollbar-track {
+    background: #E7E7E7;
+  }
+  
+.modalContent::-webkit-scrollbar-thumb {
+    background-color: #22B2E6;
+    border: 3px solid var(--primary);
+}
+  
+  
