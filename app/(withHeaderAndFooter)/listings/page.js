@@ -48,24 +48,42 @@ function Listings() {
     }, []);
     const startIndex = (currentPage - 1) * pageSize;
     const endIndex = startIndex + pageSize;
-    
+
     // const visibleData = apiData.data.slice(startIndex, endIndex);
     // setVisibleData(apiData.data.slice(startIndex, endIndex))
-    
+
     return (
         <div className='listingPage'>
             <ListingMenu onToggleChange={handleToggleChange} />
             <div className='listingSection'>
                 <div className='listingMain'>
                     <div className='cardsDiv'>
-                        {visibleData.map((item, index) => (
-                            <CardDesign
-                                key={index}
-                                {...item}
-                                address={item.address}
-                                onCardHover={handleCardHover} // Pass hover handler
-                            />
-                        ))}
+                        {visibleData && visibleData.length==0 ?
+                            (
+                                Array(5).fill(null).map((_, index) => (
+                                    <div className="card loading">
+                                        <div className="image">
+                                        </div>
+                                        <div className="content">
+                                            <h4></h4>
+                                            <div className="description">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))
+                            ) : 
+                            (
+                                (visibleData.map((item, index) => (
+                                    <CardDesign
+                                        key={index}
+                                        {...item}
+                                        address={item.address}
+                                        onCardHover={handleCardHover} // Pass hover handler
+                                    />
+                                )))
+                                )
+                        }
                     </div>
                     <div className="pagination-container">
                         <Pagination
