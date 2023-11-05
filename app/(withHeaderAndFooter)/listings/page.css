@@ -53,7 +53,7 @@
 }
 .mapDiv{
     width: 80rem;
-    height: fit-content;
+    height: calc(100vh - 8rem);
     position: sticky;
     top: 7rem;
 }

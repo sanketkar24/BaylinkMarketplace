@@ -12,6 +12,7 @@ import { SlideshowLightbox } from "lightbox.js-react";
 import "lightbox.js-react/dist/index.css";
 import { useParams } from 'next/navigation'
 import axios from "axios";
+import Map from "@/app/components/map";
 
 const { RangePicker } = DatePicker;
 
@@ -57,8 +58,8 @@ export default function ShelfDescription({ children }) {
   const handlePageChange = (page) => {
     setCurrentPage(page);
     const startIndex = (page - 1) * pageSize;
-        const endIndex = startIndex + pageSize;
-        setVisibleData(apiData.slice(startIndex, endIndex));
+    const endIndex = startIndex + pageSize;
+    setVisibleData(apiData.slice(startIndex, endIndex));
   };
 
   const handleCardHover = (lat, long) => {
@@ -95,7 +96,7 @@ export default function ShelfDescription({ children }) {
 
 
   return (
-    <div style={{ fontFamily: "General Sans Regular", paddingTop: "4.5rem", background: 'white'}}>
+    <div style={{ fontFamily: "General Sans Regular", paddingTop: "4.5rem", background: 'white' }}>
       {
         shelf_description_data ?
           <div className={`grid tablet:grid-cols-2 grid-cols-1 gap-4 mx-6 mb-4 `}>
@@ -217,7 +218,13 @@ export default function ShelfDescription({ children }) {
             <button>Contact the Owner</button>
           </div>
           <div className=" flex">
-            <div className="border border-gray-300 rounded-md p-4 w-3/4 mb-8 accounting-box"></div>
+            <div className="border border-gray-300 rounded-md w-3/4 mb-8 accounting-box">
+              {shelf_description_data && shelf_description_data.address ?
+                <Map lat={shelf_description_data && shelf_description_data.address.lat} lng={shelf_description_data && shelf_description_data.address.long} />
+                :
+                null
+              }
+            </div>
           </div>
           <div className="heading-3 mt-4">About the Space (Optional) </div>
           <div className="text mt-4 mb-4">
