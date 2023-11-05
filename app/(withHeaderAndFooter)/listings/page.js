@@ -14,7 +14,6 @@ function Listings() {
     const [currentPage, setCurrentPage] = useState(1);
     const [latitude, setLatitude] = useState(28.612894);
     const [longitude, setLongitude] = useState(77.229446);
-    const [data, setData] = useState([]);
     const [visibleData, setVisibleData] = useState([]);
     const [apiData, setApiData] = useState([]);
     const pageSize = 12; // Number of cards per page
