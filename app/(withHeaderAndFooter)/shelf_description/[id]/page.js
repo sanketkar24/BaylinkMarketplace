@@ -39,10 +39,6 @@ export default function ShelfDescription({ children }) {
       setApiDetailData(result.data.data)
       setImgLink(result.data.data.imageSrc)
       console.log('img_link: ', img_link)
-      img_link.map((item, index) => {
-        console.log(item)
-      })
-      // setData(result.data.data);
     };
 
     const fetchSimilarData = async () => {
@@ -60,6 +56,9 @@ export default function ShelfDescription({ children }) {
   // const img_link = ["https://hd.wallpaperswide.com/thumbs/anime_food_store-t2.jpg","https://hd.wallpaperswide.com/thumbs/anime_food_store-t2.jpg","https://hd.wallpaperswide.com/thumbs/anime_food_store-t2.jpg","https://hd.wallpaperswide.com/thumbs/anime_food_store-t2.jpg","https://hd.wallpaperswide.com/thumbs/anime_food_store-t2.jpg"]
   const handlePageChange = (page) => {
     setCurrentPage(page);
+    const startIndex = (page - 1) * pageSize;
+        const endIndex = startIndex + pageSize;
+        setVisibleData(apiData.slice(startIndex, endIndex));
   };
 
   const handleCardHover = (lat, long) => {
