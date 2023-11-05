@@ -1,5 +1,8 @@
+"use client";
 import React from 'react'
 import './index.css'
+import Link from 'next/link';
+import { FaTwitterSquare, FaInstagramSquare, FaLinkedin } from 'react-icons/fa'
 function Footer() {
   return (
     <div className='footer'>
@@ -22,9 +25,9 @@ function Footer() {
         <div className='footerTextSubheading'>
           About Us
           <br />
-          Terms and Conditions
+          <Link href={'/tnc'}>Terms and Conditions</Link>
           <br />
-          Privacy Policy
+          <Link href={'/privacy_policy'}>Privacy Policy</Link>
           <br />
           FAQ
         </div>
@@ -45,8 +48,18 @@ function Footer() {
         <div className='footerTextHeading'>
           Follow Us On
         </div>
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'left', gap: '1rem' }}>
+          <FaTwitterSquare className='footerIcon' size={'2.5rem'} />
+          <Link href={'https://www.instagram.com/baylink.in/'} target='_blank'>
+            <FaInstagramSquare className='footerIcon' size={'2.5rem'} />
+          </Link>
+          <Link href={'https://www.linkedin.com/company/baylink-in/'} target='_blank'>
+            <FaLinkedin className='footerIcon' size={'2.5rem'} />
+          </Link>
+        </div>
+
       </div>
-    </div>
+    </div >
   )
 }
 export default Footer
