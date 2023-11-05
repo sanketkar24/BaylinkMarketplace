@@ -28,8 +28,9 @@ function CardDesign(props) {
     return (
         <Card
             hoverable
+            bodyStyle={{ padding: 20 }}
             style={{
-                width: 300,  
+                width: 320,  
             }}
             cover={
                 <div style={{ overflow: "hidden", height: "250px" }}>
@@ -41,7 +42,7 @@ function CardDesign(props) {
             onClick={handleMouseEnter}
             onDoubleClick={handleDoubleClick} // Handle double click
         >
-            <div className='cardHeading'>
+            <div className='cardHeading' style={{ height: 'fit-content'}}>
                 <h1>{vendor_name}</h1>
                 <h2>₹{price}</h2>
             </div>
