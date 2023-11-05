@@ -1,0 +1,112 @@
+.aboutUsPage {
+  padding-top: 6.5rem;
+  background-color: aliceblue;
+  color: black;
+  align-items: center;
+  background-image: url("../../../images/ellipse.png");
+  background-repeat: no-repeat;
+}
+
+.makeitcenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.topHeader {
+  color: var(
+    --colour-pallete-secondary-2-s-300,
+    var(--colour-pallete-secondary-2-s-300, #0f0f10)
+  );
+  text-align: center;
+  width: 100%;
+  align-self: center;
+
+  /* Heading/H0 */
+  font-family: General Sans;
+  font-size: 3rem; /* equivalent to 48px */
+  font-style: normal;
+  font-weight: 600;
+  line-height: 3.5rem; /* equivalent to 56px */
+}
+
+.topParagraph {
+  color: var(--colour-pallete-secondary-2-s-300, #0f0f10);
+  text-align: center;
+  width: 80%;
+
+  /* Title/24px/Regular */
+  font-family: General Sans;
+  font-size: 1.5rem; /* equivalent to 24px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem; /* 133.333% */
+}
+
+.recordValuesBox {
+    display: flex;
+    height: 10.438rem;
+    justify-content: space-evenly;
+    align-items: center;
+    /* align-self: center; */
+    gap: 5rem;
+    /* flex-shrink: 0; */
+    border-radius: 1.25rem;
+    background: var(--colour-pallete-secondary-2-s-200, #383839);
+    width: 60vw; /* Set width to 60% of viewport width */
+
+    /* Shadow-16 */
+    /* box-shadow: 0px 0.4rem 0.9rem 0px rgba(0, 0, 0, 0.13),
+        0px 0.075rem 0.225rem 0px rgba(0, 0, 0, 0.11); */
+}
+
+.valuesBoldStyle {
+  color: #fff;
+  text-align: center;
+
+  /* Heading/H0 */
+  font-family: General Sans;
+  font-size: 3rem; /* equivalent to 48px */
+  font-style: normal;
+  font-weight: 600;
+  line-height: 3.5rem; /* 116.667% */
+}
+
+.whiteBoldText {
+  color: #fff;
+  text-align: center;
+
+  /* Title/32px/Medium */
+  font-family: General Sans;
+  font-size: 2rem; /* equivalent to 32px */
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.5rem; /* 125% */
+}
+
+.verticalSeparator {
+  width: 0.063rem;
+  height: 6.25rem;
+  background: #ffffff;
+}
+
+.normalParagraph {
+  color: var(--colour-pallete-secondary-2-s-300, #0f0f10);
+  text-align: center;
+
+  /* Label/20px/Regular */
+  font-family: General Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 140% */
+}
+
+.topHeader1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
