@@ -17,7 +17,7 @@ function Listings() {
     const [data, setData] = useState([]);
     const [visibleData, setVisibleData] = useState([]);
     const [apiData, setApiData] = useState([]);
-    const pageSize = 10; // Number of cards per page
+    const pageSize = 12; // Number of cards per page
 
     const handleToggleChange = (checked) => {
         setMapToggle(checked);
@@ -26,6 +26,9 @@ function Listings() {
 
     const handlePageChange = (page) => {
         setCurrentPage(page);
+        const startIndex = (page - 1) * pageSize;
+        const endIndex = startIndex + pageSize;
+        setVisibleData(apiData.slice(startIndex, endIndex));
     };
 
     const handleCardHover = (lat, long) => {
@@ -50,7 +53,7 @@ function Listings() {
     const endIndex = startIndex + pageSize;
 
     // const visibleData = apiData.data.slice(startIndex, endIndex);
-    // setVisibleData(apiData.data.slice(startIndex, endIndex))
+    // setVisibleData(apiData.slice(startIndex, endIndex))
 
     return (
         <div className='listingPage'>
@@ -58,32 +61,26 @@ function Listings() {
             <div className='listingSection'>
                 <div className='listingMain'>
                     <div className='cardsDiv'>
-                        {visibleData && visibleData.length==0 ?
-                            (
-                                Array(5).fill(null).map((_, index) => (
-                                    <div className="card loading">
-                                        <div className="image">
-                                        </div>
-                                        <div className="content">
-                                            <h4></h4>
-                                            <div className="description">
-
-                                            </div>
-                                        </div>
+                        {apiData.length === 0 ? (
+                            Array(4).fill(null).map((_, index) => (
+                                <div className="card loading" key={index}>
+                                    <div className="image"></div>
+                                    <div className="content">
+                                        <h4></h4>
+                                        <div className="description"></div>
                                     </div>
-                                ))
-                            ) : 
-                            (
-                                (visibleData.map((item, index) => (
-                                    <CardDesign
-                                        key={index}
-                                        {...item}
-                                        address={item.address}
-                                        onCardHover={handleCardHover} // Pass hover handler
-                                    />
-                                )))
-                                )
-                        }
+                                </div>
+                            ))
+                        ) : (
+                            visibleData.map((item, index) => (
+                                <CardDesign
+                                    key={index}
+                                    {...item}
+                                    address={item.address}
+                                    onCardHover={handleCardHover}
+                                />
+                            ))
+                        )}
                     </div>
                     <div className="pagination-container">
                         <Pagination
