@@ -16,6 +16,7 @@
 }
 
 .topHeader {
+  font-family: 'General Sans Bold';
   color: var(
     --colour-pallete-secondary-2-s-300,
     var(--colour-pallete-secondary-2-s-300, #0f0f10)

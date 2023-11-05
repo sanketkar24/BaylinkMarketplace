@@ -29,10 +29,15 @@ function CardDesign(props) {
         <Card
             hoverable
             style={{
-                width: 300,
-                
+                width: 300,  
             }}
-            cover={<img alt="example" src={imageSrc[0]} />}
+            cover={
+                <div style={{ overflow: "hidden", height: "250px" }}>
+            <img 
+                style={{ height: "100%", width: "100%", objectFit: "cover" }}
+                alt="example" src={imageSrc[0]} 
+            />
+            </div>}
             onClick={handleMouseEnter}
             onDoubleClick={handleDoubleClick} // Handle double click
         >
