@@ -39,7 +39,7 @@ function Listings() {
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios(
-                'https://baylinkmarketplaceserver.onrender.com/getListing',
+                'https://baylink-marketplace-server-eta.vercel.app/getListing',
             );
             console.log(result.data.data)
             // setData(result.data.data);

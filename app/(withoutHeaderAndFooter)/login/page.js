@@ -31,7 +31,7 @@ const Login = (props) => {
     event.preventDefault();
     console.log("Form submitted with data:", formData);
     //post formData to backend using axios
-    axios.post("https://baylinkmarketplaceserver.onrender.com/login", formData)
+    axios.post("https://baylink-marketplace-server-eta.vercel.app/login", formData)
     .then((response) => {
       //set jwt token in cookies
       const token  = response.data.accessToken;
