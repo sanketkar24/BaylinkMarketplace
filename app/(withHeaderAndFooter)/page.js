@@ -23,19 +23,12 @@ export default function Home() {
         <Text1 />
         <SearchBar />
       </div>
-      <div className=" flex flex-col items-center w-full">
+      
         <OfferingCards />
-      </div>
-      <div className=" flex flex-col items-center w-full">
         <Explore />
-      </div>
-      <div className=" flex flex-col items-center w-full">
         <Brands />
-      </div>
       <div className=" flex flex-col items-center w-full">
         <Advert />
-      </div>
-      <div className=" flex flex-col items-center w-full">
         {/* <Footer /> */}
       </div>
     </main>

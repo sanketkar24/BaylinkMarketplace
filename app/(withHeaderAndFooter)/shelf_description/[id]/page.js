@@ -1,4 +1,5 @@
 'use client'
+
 import "./index.css";
 import { useEffect } from "react";
 import Image from "next/image";
@@ -14,11 +15,11 @@ import { useParams } from 'next/navigation'
 import axios from "axios";
 import Map from "@/app/components/map";
 
-const { RangePicker } = DatePicker;
 
 export default function ShelfDescription({ children }) {
   // const apiData = data;
   // const shelf_description_data = ShelfDescription_Data.data[0];
+  const { RangePicker } = DatePicker;
 
   const [currentPage, setCurrentPage] = useState(1);
   const [size, setSize] = useState("large");
@@ -132,7 +133,7 @@ export default function ShelfDescription({ children }) {
                 className="absolute bottom-10 right-4 bg-white text-black px-4 py-2 rounded"
                 onClick={handleShowMoreClick}
               >
-                <div className="flex">
+                <div className="flex cursor-pointer">
                   <Image src={blockImage} width="20px" height="20px" />
                   <div className="ml-2">Show All Photos</div>
                 </div>

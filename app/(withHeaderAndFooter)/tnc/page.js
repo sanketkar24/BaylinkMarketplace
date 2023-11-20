@@ -65,7 +65,7 @@ function tncPage() {
 
     return (
         <div className='tnc bg-white'>
-            <div className='tnc-content bg-yellow-50 h-[80%] '>
+            <div className='tnc-content bg-yellow-50 h-[80%] text-gray-900'>
                 <div className='tnc-content-left'>
                     <div className='tnc-Heading text-center my-9'>
                         Terms and Conditions
@@ -109,7 +109,6 @@ function tncPage() {
                         <div className='modalContentBody'>1.2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
                         <div className='modalContentBody'>1.2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
                         <div className='modalContentBody'>1.2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
-
                     </div>
                 </Modal>
             </div>

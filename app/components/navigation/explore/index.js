@@ -5,6 +5,7 @@ import Link from 'next/link';
 // import { useRouter } from 'next/router';
 import axios from 'axios';
 import './index.css'
+
 const handleClick = (e, path) => {
   if (path === "/Listings") {
     console.log("I am being redirected to the listings page");
@@ -29,9 +30,9 @@ function explore() {
 
   return (
     <main className='flex flex-col justify-center items-center h-[100%] min-w-screen '>
-      <div className="text-4xl pt-20 pb-5"><span className="font-semibold bg-amber-300 ">Explore</span></div>
-      <div className='font-light tablet:text-base text-sm '>Explore exciting offline shelf space opportunities for your  </div>
-      <div className='font-light tablet:text-base text-sm '> brand's products and services right here</div>
+      <h1 className="text-4xl pt-20 pb-5"><span className="font-semibold bg-amber-300 ">Explore</span></h1>
+      <h2 className='font-light tablet:text-base text-sm '>Explore exciting offline shelf space opportunities for your  </h2>
+      <h2 className='font-light tablet:text-base text-sm '> brand's products and services right here</h2>
       <div className='flex tablet:flex-row flex-col flex-wrap overflow- mt-8 mb-8 items-center text-center justify-center'>
         {visibleData.length === 0 ? (
           Array(4).fill(null).map((_, index) => (

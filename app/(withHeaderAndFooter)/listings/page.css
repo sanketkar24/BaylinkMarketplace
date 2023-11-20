@@ -15,7 +15,6 @@
     padding-right: 3rem;
 }
 .buttonsDiv{
-    
     display: flex;
     flex-direction: row;
     justify-content: space-between;

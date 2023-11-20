@@ -24,10 +24,10 @@ function SearchBar() {
   };
 
   return (
-    <div className="flex bg-white mb-40 space-x-0 border rounded-full p-2 tablet:w-[50%] w-[70%] ">
+    <div className="flex bg-white mb-40 space-x-2 border rounded-full p-2 tablet:w-[50%] w-[70%] ">
       {/* First Dropdown */}
       <select
-        className=" rounded p-2 w-[15%] border-r-2 text-xs "
+        className="text-sm"
         value={selectedlocation}
         onChange={(e) => setSelectedlocation(e.target.value)}
       >
@@ -41,7 +41,7 @@ function SearchBar() {
 
       {/* Second Dropdown */}
       <select
-        className=" p-2 w-[15%] border-r-2 text-xs "
+        className="text-sm"
         value={selectedlocation}
         onChange={(e) => setSelectedlocation(e.target.value)}
       >
@@ -56,7 +56,7 @@ function SearchBar() {
       {/* Search Input */}
       <input
         type="text"
-        className=" px-4 w-[60%] rounded-full text-sm"
+        className=" px-4 w-[60%] rounded-full text-sm focus:outline-none"
         placeholder="Search..."
         value={searchQuery} 
         onChange={(e) => setSearchQuery(e.target.value)}

@@ -2,8 +2,12 @@ import React, { useEffect } from 'react';
 
 function Map({ lat, lng }) {
   useEffect(() => {
+
+    // add the key to environment variables and use it here , dont hardcode it
     const apiKey = '8be57801c64058e81a0ce356d4dcf48c';
+
     console.log('lat', lat, "long", lng);
+
     const loadMap = () => {
       const script = document.createElement('script');
       script.src = `https://apis.mappls.com/advancedmaps/api/${apiKey}/map_sdk?layer=vector&v=3.0&callback=initMap1`;

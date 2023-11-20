@@ -1,10 +1,12 @@
-'use client'
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import ListingMenu from '../../components/listingMenu';
 import CardDesign from '../../components/Cards/index';
 import Map from '../../components/map/index.js';
 import { Pagination } from 'antd';
-const axios = require('axios');
+
+import axios from 'axios'; // should not use require , its in common js format , use import instead for es6
 // import data from '../../sampledata.json';
 import './page.css';
 
@@ -16,6 +18,7 @@ function Listings() {
     const [longitude, setLongitude] = useState(77.229446);
     const [visibleData, setVisibleData] = useState([]);
     const [apiData, setApiData] = useState([]);
+
     const pageSize = 12; // Number of cards per page
 
     const handleToggleChange = (checked) => {
@@ -56,7 +59,9 @@ function Listings() {
 
     return (
         <div className='listingPage'>
+
             <ListingMenu onToggleChange={handleToggleChange} />
+
             <div className='listingSection'>
                 <div className='listingMain'>
                     <div className='cardsDiv'>
@@ -73,8 +78,8 @@ function Listings() {
                         ) : (
                             visibleData.map((item, index) => (
                                 <CardDesign
-                                    key={index}
                                     {...item}
+                                    key={index}
                                     address={item.address}
                                     onCardHover={handleCardHover}
                                 />
@@ -90,11 +95,11 @@ function Listings() {
                         />
                     </div>
                 </div>
-                {mapToggle ? (
+                {mapToggle && (
                     <div className='mapDiv sticky'>
                         <Map lat={latitude} lng={longitude} />
                     </div>
-                ) : null}
+                )}
             </div>
         </div>
     );
