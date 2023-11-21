@@ -16,13 +16,14 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen bg-white text-black">
-      <div className="pb-16 mb- text-black w-full">
+      <div className="pb-16  text-black w-full">
         {/* <Navbar /> */}
       </div>
       <div className=" bg-[url('../images/heropage_image.jpeg')] bg-no-repeat bg-cover flex flex-col w-full items-center my-0 text-2xl">
         <Text1 />
         <SearchBar />
       </div>
+       
       
         <OfferingCards />
         <Explore />

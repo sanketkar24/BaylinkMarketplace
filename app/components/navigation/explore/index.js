@@ -23,7 +23,7 @@ function explore() {
       );
       console.log(result.data.data)
       setVisibleData(result.data.data.slice(0, 4))
-      console.log(visibleData)
+      console.log(visibleData,"fetchData")
     };
     fetchData();
   }, []);
@@ -33,7 +33,7 @@ function explore() {
       <h1 className="text-4xl pt-20 pb-5"><span className="font-semibold bg-amber-300 ">Explore</span></h1>
       <h2 className='font-light tablet:text-base text-sm '>Explore exciting offline shelf space opportunities for your  </h2>
       <h2 className='font-light tablet:text-base text-sm '> brand's products and services right here</h2>
-      <div className='flex tablet:flex-row flex-col flex-wrap overflow- mt-8 mb-8 items-center text-center justify-center'>
+      <div className='flex tablet:flex-row flex-col flex-wrap overflow-hidden mt-8 mb-8 items-center text-center justify-center'>
         {visibleData.length === 0 ? (
           Array(4).fill(null).map((_, index) => (
             <div className="card loading mx-4 my-4 hover:shadow-2xl rounded-lg bg-contain " key={index}>
@@ -43,7 +43,7 @@ function explore() {
         ) :
           (
             visibleData.map((item, index) => (
-              <Link href={ `/shelf_description/${item._id}`}>
+              <Link href={ `/shelf_description/${item._id}`} className=''>
               <div
                 onClick={handleClick(item)}
                 style={{
