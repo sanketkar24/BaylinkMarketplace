@@ -23,7 +23,7 @@ function brands() {
               <Image src={OFFO_STORE} className='mx-10 w-2/3' alt="" preview={false} height={80} ></Image>
               <Image src={FOMO} className='mx-10 w-2/3' alt="" preview={false} height={80} ></Image>
               <Image src={PEPPER_ORIGINALS} className='mx-10 w-2/3' alt="" preview={false} height={80} ></Image>
-              <Image src={OFFO_STORE} className='mx-10 w-2/3' alt="" preview={false} height={80} ></Image>
+              <Image src={SLEEPY_OWL} className='mx-10 w-2/3' alt="" preview={false} height={80} ></Image>
             </Marquee>
           </div>
         </div>
