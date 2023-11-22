@@ -47,7 +47,7 @@ const Navbar = () => {
               List Your Shelf
             </h1>
           </CustomLink>
-          <CustomLink handleLinkClick={handleLinkClick} activeLink={activeLink} href="about_us">
+          <CustomLink handleLinkClick={handleLinkClick} activeLink={activeLink} href="aaabout_us">
             <h1 className="hover:text-sky-500">
               About Us
             </h1>
