@@ -62,7 +62,7 @@ function Listings() {
 
             <ListingMenu onToggleChange={handleToggleChange} />
 
-            <div className='listingSection'>
+            <div className='listingSection laptop:flex-row px-4 flex-col-reverse'>
                 <div className='listingMain'>
                     <div className='cardsDiv'>
                         {apiData.length === 0 ? (
@@ -96,7 +96,7 @@ function Listings() {
                     </div>
                 </div>
                 {mapToggle && (
-                    <div className='mapDiv sticky'>
+                    <div className='mapDiv tablet:sticky tablet:px-8 py-8'>
                         <Map lat={latitude} lng={longitude} />
                     </div>
                 )}

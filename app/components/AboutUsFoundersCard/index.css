@@ -1,6 +1,5 @@
 .card {
   width: 300px;
-  height: 200px;
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -41,18 +40,11 @@
 }
 
 
-
-/*  */
-
-/*  */
-
 #container {
   height: 20vh;
   width: 20vw;
   position: relative;
   margin-bottom: 15vh;
-  /* margin-right: 10vw; */
-  
 }
 #image {
   position: absolute;

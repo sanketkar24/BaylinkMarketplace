@@ -15,27 +15,30 @@ function ListingMenu({ onToggleChange }) {
   };
 
   return (
-    <div className='listingMenu text-black'>
-      <div className='buttonsDiv w-[25%] max-w-[24rem] min-w-[8rem]'>
+    <div className='fixed py-4 flex laptop:flex-row justify-between space-y-2 flex-col w-full mt-16 z-50 px-8 bg-white text-black'>
+
+      <div className='flex items-center w-full space-x-2'>
         <Button style={buttonColor}>Price</Button>
         <Button style={buttonColor} >Footfall</Button>
         <Button style={buttonColor}>Location</Button>
         <Button style={buttonColor}>All Filters</Button>
       </div>
-      <div className='buttonsDiv Right'>
-        <div className='sortByButtonDiv'>
-          <span className='text-xs'> Sort By </span>
-          <Button className='sortButton'>
+
+      <div className='flex w-1/2 items-center'>
+        <div className='flex items-center gap-2'>
+          <span className='text-xs'> SortBy </span>
+          <Button className='flex justify-between items-center w-full'>
             Recommended
             <DownOutlined />
           </Button>
         </div>
         <Divider type='vertical' style={{ borderColor: '#B0B0B0' }} />
-        <div className='showMapButton'>
-          <span> Show map </span>
+        <div className='text-sm flex items-center space-x-2'>
+          <span className='whitespace-nowrap'> Show map </span>
           <Switch onChange={handleToggleChange} />
         </div>
       </div>
+
     </div>
   )
 }

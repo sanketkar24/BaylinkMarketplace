@@ -18,13 +18,12 @@ const Navbar = () => {
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
+    setIsNavbarOpen(false)
   };
 
   const handleNavbarOpen = () => {
     setIsNavbarOpen(prev => !prev)
   }
-
-
 
   return (
     <>
@@ -58,20 +57,28 @@ const Navbar = () => {
       
         {
           isNavbarOpen &&
-          <div className="flex fixed mt-16  top-0 left-0 px-24 bg-white w-full h-screen flex-col items-center gap-6 tablet:hidden">
+          <div className="flex fixed mt-16 space-y-1 top-0 left-0 px-24 bg-white w-full h-screen flex-col items-center gap-6 tablet:hidden">
             <CustomLink handleLinkClick={handleLinkClick} activeLink={activeLink} href="/">
-              Home
+              <h1 className="mt-16 text-lg">
+                Home
+              </h1>
             </CustomLink>
             <CustomLink handleLinkClick={handleLinkClick} activeLink={activeLink} href="/listings">
-              Listings
+            <h1 className="text-lg">
+                Listings
+              </h1>
             </CustomLink>
             <CustomLink handleLinkClick={handleLinkClick} activeLink={activeLink} href="/newList">
-              List Your Shelf
+            <h1 className="text-lg">
+                List Your Shelf
+              </h1>
             </CustomLink>
             <CustomLink handleLinkClick={handleLinkClick} activeLink={activeLink} href="about_us">
-              About Us
+            <h1 className="text-lg">
+                About Us
+              </h1>
             </CustomLink>
-            <CustomLink handleLinkClick={handleLinkClick} activeLink={activeLink} href='/login' className="hover:text-sky-500 w-full text-center py-2 text-gray-50 bg-sky-500 text-base hover:underline-offset-8 hover:underline">
+            <CustomLink handleLinkClick={handleLinkClick} activeLink={activeLink} href='/login' className="hover:bg-sky-600 w-full text-center py-2 text-gray-50  bg-sky-500 text-base hover:underline-offset-8 hover:underline">
               <div className="flex items-center gap-2 justify-center">
                 <h1 className="text-base">Log In</h1>
                 <FaArrowRight size={14} className="inline-block" />

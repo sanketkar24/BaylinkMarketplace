@@ -10,10 +10,8 @@ function Footer() {
 
       <div className='flex flex-col w-full '>
         <div className='text-2xl py-2 heading-color'>
-          Find Your
-          <br className='tablet:block hidden' />
-          Brand's Perfect
-          <br className='tablet:block hidden' />
+          Find Your  <br  className='tablet:block hidden'/>
+          Brand's Perfect <br  className='tablet:block hidden'/>
           Shelf!
         </div>
         <div className='footerTextSubheading subheading-color'>
