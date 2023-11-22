@@ -114,7 +114,7 @@ function SearchBar() {
       <div className="flex items-center justify-between px-4">
         <input
           type="text"
-          className=" px-4 p-2 text-base focus:outline-none"
+          className=" px-4 p-2 mr-8 text-base focus:outline-none"
           placeholder="Search..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}

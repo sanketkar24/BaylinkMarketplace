@@ -33,54 +33,66 @@ const Navbar = () => {
         </div>
         {!isNavbarOpen && <div className="items-center gap-6 tablet:flex hidden">
           <CustomLink handleLinkClick={handleLinkClick} activeLink={activeLink} href="/">
-            Home
+            <h1 className="hover:text-sky-500">
+              Home
+            </h1>
           </CustomLink>
           <CustomLink handleLinkClick={handleLinkClick} activeLink={activeLink} href="/listings">
-            Listings
+            <h1 className="hover:text-sky-500">
+              Listings
+            </h1>
           </CustomLink>
           <CustomLink handleLinkClick={handleLinkClick} activeLink={activeLink} href="/newList">
-            List Your Shelf
+            <h1 className="hover:text-sky-500">
+              List Your Shelf
+            </h1>
           </CustomLink>
           <CustomLink handleLinkClick={handleLinkClick} activeLink={activeLink} href="about_us">
-            About Us
+            <h1 className="hover:text-sky-500">
+              About Us
+            </h1>
           </CustomLink>
           <CustomLink handleLinkClick={handleLinkClick} activeLink={activeLink} href="/signup">
-            Sign Up
+            <h1 className="hover:text-sky-500">
+              Sign Up
+            </h1>
           </CustomLink>
           <CustomLink handleLinkClick={handleLinkClick} activeLink={activeLink} href="/login">
-            Log In
+            <h1 className="hover:text-sky-500">
+              Log In
+            </h1>
           </CustomLink>
         </div>
         }
 
         {/* The navigation can be made into one , but leaving it as it is  */}
-      
+
         {
           isNavbarOpen &&
           <div className="flex fixed mt-16 space-y-1 top-0 left-0 px-24 bg-white w-full h-screen flex-col items-center gap-6 tablet:hidden">
             <CustomLink handleLinkClick={handleLinkClick} activeLink={activeLink} href="/">
-              <h1 className="mt-16 text-lg">
+              <h1 className="mt-16 text-lg hover:text-sky-500">
                 Home
               </h1>
             </CustomLink>
             <CustomLink handleLinkClick={handleLinkClick} activeLink={activeLink} href="/listings">
-            <h1 className="text-lg">
+              <h1 className="text-lg  hover:text-sky-500">
                 Listings
               </h1>
             </CustomLink>
             <CustomLink handleLinkClick={handleLinkClick} activeLink={activeLink} href="/newList">
-            <h1 className="text-lg">
+              <h1 className="text-lg  hover:text-sky-500">
                 List Your Shelf
               </h1>
             </CustomLink>
             <CustomLink handleLinkClick={handleLinkClick} activeLink={activeLink} href="about_us">
-            <h1 className="text-lg">
+              <h1 className="text-lg  hover:text-sky-500">
                 About Us
               </h1>
             </CustomLink>
             <CustomLink handleLinkClick={handleLinkClick} activeLink={activeLink} href='/login' className="hover:bg-sky-600 w-full text-center py-2 text-gray-50  bg-sky-500 text-base hover:underline-offset-8 hover:underline">
               <div className="flex items-center gap-2 justify-center">
-                <h1 className="text-base">Log In</h1>
+                <h1 className="text-lg  hover:text-sky-500">Log In</h1>
                 <FaArrowRight size={14} className="inline-block" />
               </div>
             </CustomLink>
@@ -104,7 +116,7 @@ export const CustomLink = ({ href, children, className, activeLink, handleLinkCl
 
   return (
     <Link
-      className={[className, "hover:text-sky-500 text-sm hover:underline-offset-8 hover:underline"]}
+      className={[className, "hover:text-sky-500 text-sm hover:underline-offset-8"]}
       href={href}
       onClick={() => handleLinkClick(href)}
       style={activeLink === href ? { color: "#0E87D1" } : {}}

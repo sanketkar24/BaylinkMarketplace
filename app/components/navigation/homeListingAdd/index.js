@@ -1,6 +1,4 @@
 import React from "react";
-import img1 from "../../../../images/paradyes_logo.webp";
-import Image from "next/image";
 import Link from "next/link";
 
 function Advert() {

@@ -26,7 +26,7 @@ function AboutUsFoundersCard(props) {
         </div>
       </div>}
 
-      {props.empty && <div className="w-64 relative h-72 my-4">
+      {props.empty && <div className="w-64 relative h-72 my-4 hover:shadow-xl cursor-pointer">
         <div className="rounded-md bg-gray-200 h-full w-full flex justify-center items-center">
           <FaPlusCircle className="text-[#48BFEA] text-3xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
         </div>

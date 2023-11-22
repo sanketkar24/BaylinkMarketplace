@@ -9,10 +9,8 @@ import OfferingCards from "../components/navigation/offerings/index.js"; // TODO
 import Explore from "../components/navigation/explore/index.js"
 import Brands from "../components/navigation/ourBrands/index.js"
 import Advert from "../components/navigation/homeListingAdd/index.js"
-import Footer from "../components/footer/index"
 
 
-const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen bg-white text-black">
