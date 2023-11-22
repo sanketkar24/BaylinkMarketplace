@@ -34,6 +34,7 @@
   src: url('./fonts/GeneralSans-Light.ttf') format('truetype');
 }
 
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -42,6 +43,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    overflow-x: hidden;
 }
 
 .heading{

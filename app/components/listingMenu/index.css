@@ -13,10 +13,9 @@
     padding-right: 3rem;
     z-index: 9999;
 }
+
 .buttonsDiv{
-    
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
