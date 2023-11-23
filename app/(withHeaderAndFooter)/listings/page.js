@@ -62,8 +62,8 @@ function Listings() {
 
             <ListingMenu onToggleChange={handleToggleChange} />
 
-            <div className='listingSection laptop:flex-row px-4 flex-col-reverse'>
-                <div className='listingMain'>
+            <div className='flex py-24 laptop:flex-row px-4 flex-col-reverse overflow-x-hidden'>
+                <div className='flex flex-col gap-4 w-full items-center'>
                     <div className='cardsDiv'>
                         {apiData.length === 0 ? (
                             Array(4).fill(null).map((_, index) => (
@@ -96,7 +96,7 @@ function Listings() {
                     </div>
                 </div>
                 {mapToggle && (
-                    <div className='mapDiv tablet:sticky tablet:px-8 py-8'>
+                    <div className='top-[7rem] z-10 tablet:w-full w-[35rem] h-[70vh] tablet:sticky tablet:px-8 py-8'>
                         <Map lat={latitude} lng={longitude} />
                     </div>
                 )}

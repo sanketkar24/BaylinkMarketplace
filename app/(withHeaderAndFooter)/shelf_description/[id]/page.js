@@ -97,7 +97,7 @@ export default function ShelfDescription({ children }) {
 
 
   return (
-    <div style={{ fontFamily: "General Sans Regular", paddingTop: "4.5rem", background: 'white' }}>
+    <div className="" style={{ fontFamily: "General Sans Regular", paddingTop: "4.5rem", background: 'white' }}>
       {
         shelf_description_data ?
           <div className={`grid tablet:grid-cols-2 grid-cols-1 gap-4 mx-6 mb-4 `}>
@@ -147,11 +147,11 @@ export default function ShelfDescription({ children }) {
             </Spin>
           </div>
       }
-      <div className="laptop:flex mx-12">
-        <div className="laptop:w-1/2">
+      <div className="laptop:flex  mx-12">
+        <div className="laptop:w-1/2 overflow-x-hidden">
           <div className="flex justify-between">
             <div>
-              <div className="heading-1 w-96">
+              <div className="heading-1">
                 {shelf_description_data && shelf_description_data.vendor_name}
               </div>
               <div className="heading-2">
@@ -159,7 +159,10 @@ export default function ShelfDescription({ children }) {
               </div>
             </div>
 
-            <div className="profile-image mr-4 mb-4"></div>
+            <div className="" style={{
+              backgroundImage: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfyaoHCHNg599Yp2QF3p9AVBpBOnox8v8H0GCS3j05&s")`,
+            }}>
+            </div>
           </div>
           <div className="hoizontal-rular"></div>
           <div className="flex-col justify-start items-start gap-8 inline-flex mb-4">
