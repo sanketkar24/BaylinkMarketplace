@@ -100,8 +100,8 @@ const Navbar = () => {
         }
         <div className="tablet:hidden block">
           {!isNavbarOpen ?
-            <FaBars size={18} onClick={handleNavbarOpen} className="cursor-pointer" /> :
-            <FaPlus size={18} onClick={handleNavbarOpen} className="cursor-pointer rotate-45" />
+            <FaBars size={18} onClick={handleNavbarOpen} className="cursor-pointer z-50" /> :
+            <FaPlus size={18} onClick={handleNavbarOpen} className="cursor-pointer z-50 rotate-45" />
           }
         </div>
       </div>

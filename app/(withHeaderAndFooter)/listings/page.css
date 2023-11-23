@@ -59,9 +59,10 @@
 }
 
 .mapDiv {
-  width: 70rem;
-  height:  70vh;
+  width: 40rem;
+  height: 70vh;
   top: 7rem;
+  z-index: 1;
 }
 
 .listingSection {

@@ -57,7 +57,7 @@ function Map({ lat, lng }) {
   }, [lat, lng]);
 
   return (
-      <div id="map" style={{ width: '100%', height: '100%' }}></div>
+      <div id="map" className='w-full h-full m-2 tablet:h-[80%]'></div>
   );
 }
 
