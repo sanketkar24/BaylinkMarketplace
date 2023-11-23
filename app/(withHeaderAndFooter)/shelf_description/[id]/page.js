@@ -147,7 +147,7 @@ export default function ShelfDescription({ children }) {
             </Spin>
           </div>
       }
-      <div className="laptop:flex  mx-12">
+      <div className="laptop:flex mx-8">
         <div className="laptop:w-1/2 overflow-x-hidden">
           <div className="flex justify-between">
             <div>
@@ -221,8 +221,8 @@ export default function ShelfDescription({ children }) {
           <div className="button my-4 flex">
             <button>Contact the Owner</button>
           </div>
-          <div className=" flex">
-            <div className="border border-gray-300 rounded-md w-3/4 mb-8 accounting-box">
+          <div className="flex">
+            <div className="border border-gray-300 rounded-md w-full mb-8 accounting-box">
               {shelf_description_data && shelf_description_data.address ?
                 <Map lat={shelf_description_data && shelf_description_data.address.lat} lng={shelf_description_data && shelf_description_data.address.long} />
                 :
@@ -235,8 +235,8 @@ export default function ShelfDescription({ children }) {
             {shelf_description_data && shelf_description_data.about}
           </div>
         </div>
-        <div className="laptop:w-1/2  flex justify-center ">
-          <div className="border border-gray-300 rounded-md p-4 w-3/4 mb-8 accounting-box sticky1">
+        <div className="w-full flex justify-center ">
+          <div className="border border-gray-300 rounded-md p-4 tablet:w-[80%] w-full mb-8 accounting-box sticky1">
             <div className="heading-2">Price</div>
             <div className=" justify-between items-center mt-4">
               <div className="heading-2 ">₹ {shelf_description_data && shelf_description_data.price} per month</div>
@@ -284,14 +284,16 @@ export default function ShelfDescription({ children }) {
       <div className="listingMain py-10">
         <div className="hoizontal-rular w-screen"></div>
         <div className="heading-3 mt-4 mx-10">Similar Spaces </div>
-        <div className="cardsDiv">
+        <div className="flex items-center justify-center w-full flex-wrap">
           {visibleData.map((item, index) => (
-            <CardDesign
-              key={index}
-              {...item}
-              address={item.address}
-              onCardHover={handleCardHover} // Pass hover handler
-            />
+            <div className="m-4">
+              <CardDesign
+                key={index}
+                {...item}
+                address={item.address}
+                onCardHover={handleCardHover} // Pass hover handler
+              />
+            </div>
           ))}
         </div>
         <div className="pagination-container">
