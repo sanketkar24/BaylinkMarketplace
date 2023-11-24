@@ -33,7 +33,7 @@ function ListingMenu({ onToggleChange }) {
           </Button>
         </div>
         <Divider type='vertical' style={{ borderColor: '#B0B0B0' }} />
-        <div className='text-sm flex items-center space-x-2'>
+        <div className='text-sm hidden laptop:flex items-center space-x-2'>
           <span className='whitespace-nowrap'> Show map </span>
           <Switch onChange={handleToggleChange} />
         </div>

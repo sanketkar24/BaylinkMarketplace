@@ -1,12 +1,10 @@
-'use client';
-
+'use client'
 import React, { useState, useEffect } from 'react';
 import ListingMenu from '../../components/listingMenu';
 import CardDesign from '../../components/Cards/index';
 import Map from '../../components/map/index.js';
 import { Pagination } from 'antd';
-
-import axios from 'axios'; // should not use require , its in common js format , use import instead for es6
+const axios = require('axios');
 // import data from '../../sampledata.json';
 import './page.css';
 
@@ -16,10 +14,10 @@ function Listings() {
     const [currentPage, setCurrentPage] = useState(1);
     const [latitude, setLatitude] = useState(28.612894);
     const [longitude, setLongitude] = useState(77.229446);
+    const [data, setData] = useState([]);
     const [visibleData, setVisibleData] = useState([]);
     const [apiData, setApiData] = useState([]);
-
-    const pageSize = 12; // Number of cards per page
+    const pageSize = 10; // Number of cards per page
 
     const handleToggleChange = (checked) => {
         setMapToggle(checked);
@@ -28,9 +26,6 @@ function Listings() {
 
     const handlePageChange = (page) => {
         setCurrentPage(page);
-        const startIndex = (page - 1) * pageSize;
-        const endIndex = startIndex + pageSize;
-        setVisibleData(apiData.slice(startIndex, endIndex));
     };
 
     const handleCardHover = (lat, long) => {
@@ -42,7 +37,7 @@ function Listings() {
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios(
-                'https://baylink-marketplace-server-eta.vercel.app/getListing',
+                'https://baylinkmarketplaceserver.onrender.com/getListing',
             );
             console.log(result.data.data)
             // setData(result.data.data);
@@ -55,36 +50,40 @@ function Listings() {
     const endIndex = startIndex + pageSize;
 
     // const visibleData = apiData.data.slice(startIndex, endIndex);
-    // setVisibleData(apiData.slice(startIndex, endIndex))
+    // setVisibleData(apiData.data.slice(startIndex, endIndex))
 
     return (
         <div className='listingPage'>
-
             <ListingMenu onToggleChange={handleToggleChange} />
+            <div className='listingSection'>
+                <div className='listingMain'>
+                    <div className='cardsDiv'>
+                        {visibleData && visibleData.length==0 ?
+                            (
+                                Array(5).fill(null).map((_, index) => (
+                                    <div className="card loading">
+                                        <div className="image">
+                                        </div>
+                                        <div className="content">
+                                            <h4></h4>
+                                            <div className="description">
 
-            <div className='flex py-24 laptop:flex-row flex-col-reverse overflow-x-hidden'>
-                <div className='flex flex-col gap-4 w-full items-center'>
-                    <div className={`cardsDiv  ${mapToggle ? "my-8" : "my-24"}`}>
-                        {apiData.length === 0 ? (
-                            Array(4).fill(null).map((_, index) => (
-                                <div className="card loading" key={index}>
-                                    <div className="image"></div>
-                                    <div className="content">
-                                        <h4></h4>
-                                        <div className="description"></div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            ))
-                        ) : (
-                            visibleData.map((item, index) => (
-                                <CardDesign
-                                    {...item}
-                                    key={index}
-                                    address={item.address}
-                                    onCardHover={handleCardHover}
-                                />
-                            ))
-                        )}
+                                ))
+                            ) : 
+                            (
+                                (visibleData.map((item, index) => (
+                                    <CardDesign
+                                        key={index}
+                                        {...item}
+                                        address={item.address}
+                                        onCardHover={handleCardHover} // Pass hover handler
+                                    />
+                                )))
+                                )
+                        }
                     </div>
                     <div className="pagination-container">
                         <Pagination
@@ -95,11 +94,11 @@ function Listings() {
                         />
                     </div>
                 </div>
-                {mapToggle && (
-                    <div className='mt-20 z-10 tablet:w-[50%] w-[30rem] tablet:h-[40rem] h-[30rem] tablet:sticky'>
+                {mapToggle ? (
+                    <div className='mapDiv sticky hidden laptop:flex '>
                         <Map lat={latitude} lng={longitude} />
                     </div>
-                )}
+                ) : null}
             </div>
         </div>
     );

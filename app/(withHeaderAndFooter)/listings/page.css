@@ -46,21 +46,23 @@
   flex-direction: column;
   gap: 2rem;
   width: 100%;
+  margin-top: 1rem;
   align-items: center;
 }
 
 .cardsDiv {
   justify-content: center;
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
   height: fit-content;
   flex-direction: row;
+  margin-top: 2rem;
 }
 
 .mapDiv {
-  width: 40rem;
-  height: 70vh;
+  width: 80vw;
+  height: 100vh;
   top: 7rem;
   z-index: 1;
 }

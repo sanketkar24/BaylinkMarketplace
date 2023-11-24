@@ -235,7 +235,7 @@ export default function ShelfDescription({ children }) {
             {shelf_description_data && shelf_description_data.about}
           </div>
         </div>
-        <div className="w-full flex justify-center ">
+        <div className="laptop:w-1/2 w-full flex justify-center ">
           <div className="border border-gray-300 rounded-md p-4 tablet:w-[80%] w-full mb-8 accounting-box sticky1">
             <div className="heading-2">Price</div>
             <div className=" justify-between items-center mt-4">
@@ -286,7 +286,7 @@ export default function ShelfDescription({ children }) {
         <div className="heading-3 mt-4 mx-10">Similar Spaces </div>
         <div className="flex items-center justify-center w-full flex-wrap">
           {visibleData.map((item, index) => (
-            <div className="m-4">
+            <div className="">
               <CardDesign
                 key={index}
                 {...item}
