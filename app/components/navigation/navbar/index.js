@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="w-full fixed bg-white flex text-black items-center flex-row justify-between py-4 px-10 m-0 border-b border-black" style={{ zIndex: "99999" }}>
+      <div className="w-full fixed bg-white flex text-black items-center flex-row justify-between py-4 px-10 border-b border-black" style={{ zIndex: "99999" }}>
         <div onClick={() => router.push("/")} className="h-30 w-24 cursor-pointer md:h-30 md:w-40">
           <Image src={navbarLogo} alt="navbar logo" height={50} />
         </div>

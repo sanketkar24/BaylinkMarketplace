@@ -8,8 +8,8 @@ import twitter from "../../public/assets/Twitter.png";
 
 const Footer = () => {
   return (
-    <div className="Footer ">
-      <div className="lg:h-60 lg:flex  sm:h-auto sm:grid sm:grid-cols-1 sm:gap-4 sm:content-center md:h-auto md:grid md:grid-cols-2 md:gap-4 md:content-center  items-center justify-center">
+    <div className="Footer w-full h-full">
+      <div className="lg:h-60 lg:flex sm:h-auto sm:grid sm:grid-cols-1 sm:gap-4 sm:content-center md:h-auto md:grid md:grid-cols-2 md:gap-4 md:content-center  items-center justify-center">
         <div className="flex-1 lg:mb-0 lg:mt-0 md:mt-20 md:ml-20 md:mb-20 sm:mt-20 h-40">
           <div className="heading sm:text-center">
             Find Your Brand's Perfect Shelf!
@@ -17,7 +17,6 @@ const Footer = () => {
           <div className="sm:flex sm:items-center sm:justify-center">
             <div className="row sm:w-auto">
               <div className="blue-text">Search</div>
-
               <div className="vertical-divider"></div>
               <div className="blue-text w-25 center">Find</div>
               <div className="vertical-divider"></div>

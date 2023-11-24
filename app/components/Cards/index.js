@@ -7,8 +7,8 @@ import './index.css';
 
 function CardDesign(props) {
     const cardWidth = 300; // Set your desired width here
-    const cardHeight = (cardWidth * 9) / 16; // Calculate the height for a 16:9 aspect ratio
-    
+    const cardHeight = 350 // Calculate the height for a 16:9 aspect ratio
+
     const { _id, imageSrc, price, vendor_name, location, area, margin, footfall, address, onCardHover } = props;
 
     const [isHovered, setIsHovered] = useState(false);
@@ -27,22 +27,23 @@ function CardDesign(props) {
 
     return (
         <Card
+            className='m-2'
             hoverable
             bodyStyle={{ padding: 20 }}
             style={{
-                width: 320,  
+                width: cardWidth,
+                height: cardHeight,
             }}
-            cover={
-                <div style={{ overflow: "hidden", height: "250px" }}>
-            <img 
-                style={{ height: "100%", width: "100%", objectFit: "cover" }}
-                alt="example" src={imageSrc[0]} 
-            />
+            cover={<div className='' style={{ overflow: "hidden", height: "210px" }}>
+                <img
+                    style={{ height: "100%", width: "100%", objectFit: "cover" }}
+                    alt="example" src={imageSrc[0]}
+                />
             </div>}
             onClick={handleMouseEnter}
             onDoubleClick={handleDoubleClick} // Handle double click
         >
-            <div className='cardHeading' style={{ height: 'fit-content'}}>
+            <div className='cardHeading' style={{ height: 'fit-content' }}>
                 <h1>{vendor_name}</h1>
                 <h2>₹{price}</h2>
             </div>
