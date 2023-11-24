@@ -95,7 +95,7 @@ function Listings() {
                     </div>
                 </div>
                 {mapToggle ? (
-                    <div className='mapDiv sticky hidden laptop:block '>
+                    <div className='mapDiv sticky hidden laptop:flex '>
                         <Map lat={latitude} lng={longitude} />
                     </div>
                 ) : null}
